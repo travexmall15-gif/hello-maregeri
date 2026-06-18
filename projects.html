@@ -7,480 +7,239 @@
 <link rel="stylesheet" href="style.css"/>
 <style>
 #proj-hero {
-  min-height: 40vh; display: flex; align-items: center;
-  padding: 120px 5% 60px;
-  background: var(--dark); position: relative; overflow: hidden;
+  min-height: 38vh; display: flex; align-items: center;
+  padding: 110px 5% 56px; background: var(--dark);
+  position: relative; overflow: hidden;
 }
-  position: absolute; top: 0; left: 5%; right: 5%; height: 2px;
-  background: linear-gradient(to right, transparent, var(--gold), transparent);
+.proj-glow {
+  position: absolute; top: -60px; right: 5%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 65%);
+  pointer-events: none;
 }
-.proj-hero-content h1 {
-  font-size: clamp(3rem, 8vw, 6rem);
-  line-height: 0.95; letter-spacing: 0.02em;
-}
+.proj-hero-content h1 { font-size: clamp(3rem,7vw,5.5rem); font-weight: 800; line-height: 0.95; }
 .proj-hero-content h1 span { color: var(--gold); }
-.proj-hero-content p {
-  font-size: 1rem; color: var(--gray);
-  margin-top: 16px; max-width: 500px; line-height: 1.6;
-}
-
-/* TABS */
-#projects-main { background: var(--black); padding-top: 60px; }
+.proj-hero-content p { font-size: 0.95rem; color: var(--muted); margin-top: 14px; max-width: 480px; line-height: 1.6; }
+#projects-main { background: var(--bg); padding-top: 56px; }
 .tabs {
-  display: flex; gap: 4px;
-  background: var(--card);
-  border-radius: 50px;
-  padding: 5px;
-  width: fit-content;
-  margin-bottom: 48px;
-  flex-wrap: wrap;
+  display: flex; gap: 4px; background: var(--card);
+  border-radius: 10px; padding: 5px; width: fit-content;
+  margin-bottom: 44px; flex-wrap: wrap;
 }
 .tab-btn {
-  padding: 10px 24px;
-  background: transparent;
-  border: none; border-radius: 50px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--gray); cursor: pointer;
-  transition: all 0.25s;
+  padding: 9px 22px; background: transparent; border: none; border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+  cursor: pointer; transition: all 0.2s;
 }
-.tab-btn.active {
-  background: var(--gold); color: var(--black);
-}
+.tab-btn.active { background: var(--gold); color: var(--bg); }
 .tab-btn:hover:not(.active) { color: var(--white); }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
-
-/* PROJECT GRID */
-.proj-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-}
+.proj-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
 .proj-card {
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 18px; overflow: hidden;
+  background: var(--card); border: 1px solid var(--border2);
+  border-radius: 16px; overflow: hidden; cursor: pointer;
   transition: transform 0.25s, border-color 0.25s;
-  cursor: pointer;
 }
-.proj-card:hover { transform: translateY(-6px); border-color: var(--gold); }
-.proj-card .proj-img {
-  width: 100%; aspect-ratio: 16/10;
-  object-fit: cover; display: block;
-  transition: transform 0.4s;
-}
-.proj-card:hover .proj-img { transform: scale(1.04); }
+.proj-card:hover { transform: translateY(-5px); border-color: var(--border); }
 .proj-img-wrap { overflow: hidden; }
-.proj-body { padding: 20px; }
-.proj-cat {
-  font-size: 0.68rem; font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 8px;
+.proj-card-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; transition: transform 0.4s; }
+.proj-card:hover .proj-card-img { transform: scale(1.04); }
+.proj-card-body { padding: 18px 20px; }
+.proj-cat { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.proj-card-body h3 { font-family: 'Sora',sans-serif; font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 7px; line-height: 1.2; }
+.proj-card-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+.proj-open { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; }
+.mag-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+.mag-card { background: var(--card); border: 1px solid var(--border2); border-radius: 14px; overflow: hidden; cursor: pointer; transition: transform 0.25s, border-color 0.25s; }
+.mag-card:hover { transform: translateY(-4px); border-color: var(--border); }
+.mag-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+.mag-body { padding: 14px 16px; }
+.mag-body h3 { font-family: 'Sora',sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+.mag-body p { font-size: 0.76rem; color: var(--muted); }
+/* MODAL */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(4,8,16,0.97); backdrop-filter: blur(14px); overflow-y: auto;
 }
-.proj-body h3 {
-  font-size: 1.15rem; letter-spacing: 0.04em;
-  color: var(--white); margin-bottom: 8px; line-height: 1.2;
+.modal-overlay.open { display: block; }
+.modal-box { max-width: 900px; margin: 60px auto; padding: 0 20px 60px; }
+.modal-close {
+  position: fixed; top: 20px; right: 24px; width: 42px; height: 42px; border-radius: 50%;
+  background: var(--card); border: 1px solid var(--border); color: var(--white);
+  font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s; z-index: 10000;
 }
-.proj-body p {
-  font-size: 0.82rem; color: var(--gray);
-  line-height: 1.6; margin-bottom: 14px;
-}
-.proj-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-
-/* FEATURED card - spans 2 cols */
-.proj-featured {
-  grid-column: span 2;
-}
-.proj-featured .proj-img {
-  aspect-ratio: 21/9;
-}
-
-/* Digital cards with link */
-.proj-link-bar {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-top: 14px; padding-top: 12px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-.proj-link-bar a {
-  font-size: 0.78rem; font-weight: 700;
-  color: var(--gold); text-decoration: none;
-  letter-spacing: 0.06em;
-  transition: opacity 0.2s;
-}
-.proj-link-bar a:hover { opacity: 0.7; }
-
-/* Magazine grid - portrait */
-.mag-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-}
-.mag-card {
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 14px; overflow: hidden;
-  transition: transform 0.25s, border-color 0.25s;
-}
-.mag-card:hover { transform: translateY(-5px); border-color: var(--gold); }
-.mag-card img {
-  width: 100%; aspect-ratio: 3/4;
-  object-fit: cover; display: block;
-}
-.mag-body { padding: 16px; }
-.mag-body h3 {
-  font-size: 1rem; letter-spacing: 0.04em;
-  color: var(--white); margin-bottom: 4px;
-}
-.mag-body p { font-size: 0.78rem; color: var(--gray); }
-
-@media (max-width: 900px) {
-  .proj-grid { grid-template-columns: 1fr 1fr; }
-  .proj-featured { grid-column: span 2; }
-  .mag-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 580px) {
-  .proj-grid { grid-template-columns: 1fr; }
-  .proj-featured { grid-column: span 1; }
-  .proj-featured .proj-img { aspect-ratio: 16/10; }
-  .mag-grid { grid-template-columns: 1fr 1fr; }
-  .tabs { gap: 3px; }
-  .tab-btn { padding: 9px 16px; font-size: 0.72rem; }
-}
+.modal-close:hover { background: var(--gold); color: var(--bg); }
+.modal-cat { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.modal-title { font-family: 'Sora',sans-serif; font-size: clamp(1.6rem,4vw,2.4rem); font-weight: 800; color: var(--white); margin-bottom: 22px; line-height: 1.1; }
+.modal-hero-img { width: 100%; max-height: 460px; object-fit: cover; border-radius: 14px; margin-bottom: 28px; border: 1px solid var(--border2); }
+.modal-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.9; margin-bottom: 24px; max-width: 740px; }
+.modal-tags { margin-bottom: 28px; }
+.modal-divider { height: 1px; background: var(--border2); margin: 28px 0; }
+.modal-gallery-label { font-family: 'Sora',sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.modal-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.modal-gallery img { width: 100%; border-radius: 10px; object-fit: cover; aspect-ratio: 16/10; display: block; border: 1px solid var(--border2); cursor: zoom-in; transition: transform 0.2s; }
+.modal-gallery img:hover { transform: scale(1.02); }
+.modal-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--gold); color: var(--bg); font-family: 'Plus Jakarta Sans',sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 8px; margin-top: 6px; transition: background 0.2s; }
+.modal-link:hover { background: var(--gold2); }
+@media (max-width: 900px) { .proj-grid { grid-template-columns: 1fr 1fr; } .mag-grid { grid-template-columns: 1fr 1fr; } .modal-gallery { grid-template-columns: 1fr; } }
+@media (max-width: 580px) { .proj-grid { grid-template-columns: 1fr; } .tab-btn { padding: 8px 14px; font-size: 0.72rem; } }
 </style>
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="nav-logo">JM<span>.</span></a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="index.html#whatido">About</a></li>
-    <li><a href="story.html">Story</a></li>
-    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="index.html">Home</a></li><li><a href="index.html#services">About</a></li>
+    <li><a href="story.html">Story</a></li><li><a href="projects.html" class="active">Projects</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="index.html#whatido">About</a>
-  <a href="story.html">Story</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
+  <a href="index.html">Home</a><a href="index.html#services">About</a>
+  <a href="story.html">Story</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a>
 </div>
 
-<!-- HERO -->
 <section id="proj-hero">
-  <div class="proj-hero-content reveal">
-    <div class="section-label">Portfolio</div>
+  <div class="proj-glow"></div>
+  <div class="proj-hero-content reveal" style="position:relative;z-index:1">
+    <div class="label">Portfolio</div>
     <h1>MY <span>PROJECTS</span></h1>
     <p>Architecture · Digital Products · Magazine Publishing</p>
   </div>
 </section>
 
-<!-- PROJECTS MAIN -->
 <section id="projects-main">
-  <!-- TABS -->
   <div class="tabs reveal">
-    <button class="tab-btn active" onclick="switchTab('architecture', this)">🏗 Architecture</button>
-    <button class="tab-btn" onclick="switchTab('digital', this)">💻 Digital</button>
-    <button class="tab-btn" onclick="switchTab('author', this)">📰 Author</button>
+    <button class="tab-btn active" onclick="switchTab('architecture',this)">🏗 Architecture</button>
+    <button class="tab-btn" onclick="switchTab('digital',this)">💻 Digital</button>
+    <button class="tab-btn" onclick="switchTab('author',this)">📰 Author</button>
   </div>
 
-  <!-- ARCHITECTURE TAB -->
   <div class="tab-panel active" id="tab-architecture">
     <div class="proj-grid">
-
-      <div class="proj-card proj-featured">
-        <div class="proj-img-wrap">
-          <img src="images/stadium4.png" alt="Football Stadium" class="proj-img"/>
-        </div>
-        <div class="proj-body">
+      <div class="proj-card" onclick="openModal('stadium')">
+        <div class="proj-img-wrap"><img src="images/stadium4.png" class="proj-card-img" alt="Stadium"/></div>
+        <div class="proj-card-body">
           <div class="proj-cat">Sports Facility · Most Proud Project</div>
-          <h3>FOOTBALL STADIUM DESIGN</h3>
-          <p>Large-scale football stadium incorporating spectator stands, pitch layout, access circulation, landscape buffer zones and ancillary public facilities. Designed entirely in Live Home 3D with full site planning.</p>
-          <div class="proj-tags">
-            <span class="tag">Live Home 3D</span>
-            <span class="tag">Sports Facility</span>
-            <span class="tag">Site Planning</span>
-            <span class="tag">Landscape Arch</span>
-          </div>
+          <h3>Football Stadium</h3>
+          <p>Large-scale stadium with full site planning, spectator stands and landscape buffer zones.</p>
+          <div class="proj-open">View Project →</div>
         </div>
       </div>
-
-      <div class="proj-card">
-        <div class="proj-img-wrap">
-          <img src="images/stadium3.png" alt="Stadium Aerial" class="proj-img"/>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Sports Facility</div>
-          <h3>STADIUM — AERIAL VIEW</h3>
-          <p>Aerial perspective showing full site layout, parking, access roads and surrounding landscape buffer zones.</p>
-          <div class="proj-tags">
-            <span class="tag">Aerial Render</span><span class="tag">Site Layout</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-img-wrap">
-          <img src="images/stadium5.png" alt="Stadium Front" class="proj-img"/>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Sports Facility</div>
-          <h3>STADIUM — FRONT ELEVATION</h3>
-          <p>Front facade render showing main entrance, facade design and pedestrian approach landscaping.</p>
-          <div class="proj-tags">
-            <span class="tag">Front Elevation</span><span class="tag">Facade Design</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card proj-featured">
-        <div class="proj-img-wrap">
-          <img src="images/mosque1.png" alt="Islamic Center" class="proj-img"/>
-        </div>
-        <div class="proj-body">
+      <div class="proj-card" onclick="openModal('mosque')">
+        <div class="proj-img-wrap"><img src="images/mosque2.png" class="proj-card-img" alt="Mosque"/></div>
+        <div class="proj-card-body">
           <div class="proj-cat">Civic & Religious Architecture</div>
-          <h3>ISLAMIC CENTER</h3>
-          <p>Complete Islamic center design including mosque, madrasas and surrounding landscape. Features blue domes, minarets, arched colonnades and structured courtyard planning for community worship and education.</p>
-          <div class="proj-tags">
-            <span class="tag">Live Home 3D</span>
-            <span class="tag">Civic Arch</span>
-            <span class="tag">Site Planning</span>
-          </div>
+          <h3>Islamic Center</h3>
+          <p>Full Islamic complex with mosque, madrasa, minarets and courtyard landscape design.</p>
+          <div class="proj-open">View Project →</div>
         </div>
       </div>
-
-      <div class="proj-card">
-        <div class="proj-img-wrap">
-          <img src="images/mosque2.png" alt="Mosque Closeup" class="proj-img"/>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Religious Architecture</div>
-          <h3>MOSQUE — CLOSE UP</h3>
-          <p>Detailed mosque render showing dome, minarets, arched entrance and courtyard landscape.</p>
-          <div class="proj-tags">
-            <span class="tag">Mosque Design</span><span class="tag">Landscape</span>
-          </div>
+      <div class="proj-card" onclick="openModal('bungalow')">
+        <div class="proj-img-wrap"><img src="images/bungalow1.jpg" class="proj-card-img" alt="Bungalow"/></div>
+        <div class="proj-card-body">
+          <div class="proj-cat">Residential · Makongo, Dar es Salaam</div>
+          <h3>Luxurious Bungalow</h3>
+          <p>Luxury residential bungalow with pool, tropical gardens and sustainable outdoor spaces.</p>
+          <div class="proj-open">View Project →</div>
         </div>
       </div>
-
-      <div class="proj-card">
-        <div class="proj-img-wrap">
-          <img src="images/bungalow1.jpg" alt="Bungalow" class="proj-img"/>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Residential · Makongo DSM</div>
-          <h3>LUXURIOUS BUNGALOW</h3>
-          <p>Luxury residential bungalow for the Makongo area. Tropical landscape, pool integration and sustainable outdoor living spaces.</p>
-          <div class="proj-tags">
-            <span class="tag">Residential</span><span class="tag">Luxury</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-img-wrap">
-          <img src="images/bungalow2.jpg" alt="Bungalow View 2" class="proj-img"/>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Residential</div>
-          <h3>BUNGALOW — GARDEN VIEW</h3>
-          <p>Garden and pool area render showing tropical landscaping, outdoor deck and boundary treatment.</p>
-          <div class="proj-tags">
-            <span class="tag">Landscape</span><span class="tag">Pool Design</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-img-wrap">
-          <img src="images/bungalow3.jpg" alt="Bungalow Rear" class="proj-img"/>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Residential</div>
-          <h3>BUNGALOW — REAR ELEVATION</h3>
-          <p>Rear garden view showing architectural detailing, windows and integrated outdoor garden design.</p>
-          <div class="proj-tags">
-            <span class="tag">Architecture</span><span class="tag">Garden Design</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card proj-featured">
-        <div class="proj-img-wrap">
-          <img src="images/commercial1.jpg" alt="Commercial Complex" class="proj-img"/>
-        </div>
-        <div class="proj-body">
+      <div class="proj-card" onclick="openModal('commercial')">
+        <div class="proj-img-wrap"><img src="images/commercial1.jpg" class="proj-card-img" alt="Commercial"/></div>
+        <div class="proj-card-body">
           <div class="proj-cat">Commercial · Urban Landscape</div>
-          <h3>SS CENTRE — COMMERCIAL COMPLEX</h3>
-          <p>Urban landscape design for a large commercial complex. Outdoor seating areas, stone paving, palm-lined entrances, green buffer zones and pedestrian circulation integrated with the glass facade building.</p>
-          <div class="proj-tags">
-            <span class="tag">Commercial</span>
-            <span class="tag">Urban Landscape</span>
-            <span class="tag">Live Home 3D</span>
-          </div>
+          <h3>SS Centre Commercial Complex</h3>
+          <p>Urban landscape with outdoor seating, stone paving, palm-lined entrances and green zones.</p>
+          <div class="proj-open">View Project →</div>
         </div>
       </div>
-
-      <div class="proj-card proj-featured">
-        <div class="proj-img-wrap">
-          <img src="images/hotel1.png" alt="Hotel" class="proj-img"/>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Hospitality · Luxury</div>
-          <h3>LUXURIOUS HOTEL DESIGN</h3>
-          <p>Multi-storey luxury hotel with comprehensive site landscape design. Features pool, parking with tensile canopy structures, tropical planting and curved road access all integrated with a high-rise glass tower.</p>
-          <div class="proj-tags">
-            <span class="tag">Hospitality</span>
-            <span class="tag">Site Planning</span>
-            <span class="tag">Landscape Arch</span>
-          </div>
+      <div class="proj-card" onclick="openModal('hotel')">
+        <div class="proj-img-wrap"><img src="images/hotel1.png" class="proj-card-img" alt="Hotel"/></div>
+        <div class="proj-card-body">
+          <div class="proj-cat">Hospitality · Luxury Hotel</div>
+          <h3>Luxurious Hotel</h3>
+          <p>Multi-storey glass tower hotel with full site landscape, pool, parking and tropical planting.</p>
+          <div class="proj-open">View Project →</div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- DIGITAL TAB -->
   <div class="tab-panel" id="tab-digital">
     <div class="proj-grid">
-
-      <div class="proj-card proj-featured">
-        <div class="proj-img-wrap">
-          <img src="images/travex_mall1.png" alt="Travex Mall" class="proj-img"/>
-        </div>
-        <div class="proj-body">
+      <div class="proj-card" onclick="openModal('travexmall')">
+        <div class="proj-img-wrap"><img src="images/travex_mall1.png" class="proj-card-img" alt="Travex Mall"/></div>
+        <div class="proj-card-body">
           <div class="proj-cat">E-Commerce Marketplace · Live</div>
-          <h3>TRAVEX MALL</h3>
-          <p>Africa's intelligent digital marketplace. Multi-tier seller dashboards (Basic & Premium), campus market flows, PWA support, full authentication and AI-powered features. Core product of Travex Digital Group.</p>
-          <div class="proj-tags">
-            <span class="tag">Next.js 16</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">Vercel</span>
-            <span class="tag">PWA</span>
-          </div>
-          <div class="proj-link-bar">
-            <a href="https://travex-mall.vercel.app" target="_blank" rel="noopener">Visit Site ↗ travex-mall.vercel.app</a>
-          </div>
+          <h3>Travex Mall</h3>
+          <p>Africa's intelligent digital marketplace — AI tools, multi-tier dashboards, PWA.</p>
+          <div class="proj-open">View Project →</div>
         </div>
       </div>
-
-      <div class="proj-card">
-        <div class="proj-img-wrap">
-          <img src="images/travex_mall2.png" alt="Travex Social Vybe" class="proj-img"/>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">Business Social Network · Live</div>
-          <h3>TRAVEX SOCIAL VYBE</h3>
-          <p>Tanzania's first business social network — inside Travex Mall. Post products, grow your brand and connect directly with buyers.</p>
-          <div class="proj-tags">
-            <span class="tag">Social Commerce</span>
-            <span class="tag">Next.js</span>
-            <span class="tag">Real-time</span>
-          </div>
-          <div class="proj-link-bar">
-            <a href="https://travex-mall.vercel.app" target="_blank" rel="noopener">Visit ↗</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-img-wrap">
-          <img src="images/travex_finance.png" alt="Travex Finance" class="proj-img"/>
-        </div>
-        <div class="proj-body">
+      <div class="proj-card" onclick="openModal('travexfinance')">
+        <div class="proj-img-wrap"><img src="images/travex_finance.png" class="proj-card-img" alt="Travex Finance"/></div>
+        <div class="proj-card-body">
           <div class="proj-cat">Financial SaaS · Live</div>
-          <h3>TRAVEX FINANCE</h3>
-          <p>Financial management SaaS for Tanzanian retail businesses. Record sales, manage stock, track debts — all in one Kiswahili-first interface.</p>
-          <div class="proj-tags">
-            <span class="tag">SaaS</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">Kiswahili UI</span>
-          </div>
-          <div class="proj-link-bar">
-            <a href="https://travex-finance.vercel.app" target="_blank" rel="noopener">Visit Site ↗ travex-finance.vercel.app</a>
-          </div>
+          <h3>Travex Finance</h3>
+          <p>Financial management SaaS for Tanzanian retailers — full Kiswahili interface.</p>
+          <div class="proj-open">View Project →</div>
         </div>
       </div>
-
-      <div class="proj-card proj-featured">
-        <div class="proj-img-wrap" style="background:var(--dark);display:flex;align-items:center;justify-content:center;aspect-ratio:21/9;">
-          <div style="text-align:center;padding:40px;">
-            <div style="font-family:'Sora',sans-serif;font-size:3rem;color:var(--gold);letter-spacing:0.06em;">EFVS</div>
-            <div style="font-size:0.9rem;color:var(--gray);margin-top:8px;">Economic Footprint Verification System</div>
+      <div class="proj-card" onclick="openModal('efvs')">
+        <div class="proj-img-wrap" style="background:var(--card2);display:flex;align-items:center;justify-content:center;aspect-ratio:16/10">
+          <div style="text-align:center;padding:30px">
+            <div style="font-family:'Sora',sans-serif;font-size:2.5rem;font-weight:800;color:var(--gold)">EFVS</div>
+            <div style="font-size:0.8rem;color:var(--muted);margin-top:6px">Tax Intelligence System</div>
           </div>
         </div>
-        <div class="proj-body">
-          <div class="proj-cat">GovTech / TaxTech · TRA Innovation Competition 2026</div>
-          <h3>ECONOMIC FOOTPRINT VERIFICATION SYSTEM</h3>
-          <p>Cross-sector tax intelligence system for the Tanzania Revenue Authority. Cross-references taxpayer declarations against TANESCO, DAWASCO, mobile money (M-Pesa/Airtel), NSSF and TANCIS data to detect revenue leakage at scale.</p>
-          <div class="proj-tags">
-            <span class="tag">GovTech</span>
-            <span class="tag">Data Intelligence</span>
-            <span class="tag">Tax Compliance</span>
-            <span class="tag">Product Strategy</span>
-          </div>
+        <div class="proj-card-body">
+          <div class="proj-cat">GovTech · TRA Innovation 2026</div>
+          <h3>Economic Footprint Verification</h3>
+          <p>Cross-sector tax intelligence for Tanzania Revenue Authority — detecting revenue leakage.</p>
+          <div class="proj-open">View Project →</div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- AUTHOR TAB -->
   <div class="tab-panel" id="tab-author">
-    <p style="color:var(--gray);font-size:0.9rem;margin-bottom:32px;max-width:600px;line-height:1.7;">
-      Author of digital magazines spanning architecture, lifestyle, sports, digital and tech.
-      Each magazine is researched, written, designed and edited by Jumanne Maregeri —
-      covering East Africa's most important stories.
-    </p>
     <div class="mag-grid">
-      <div class="mag-card">
-        <img src="images/mag_econosports.png" alt="EconoSports Magazine"/>
-        <div class="mag-body">
-          <h3>ECONOSPORTS</h3>
-          <p>Sports Business Magazine — African Clubs Rising. January 2026.</p>
-          <div style="margin-top:10px;"><span class="tag">Sports</span> <span class="tag">Business</span></div>
-        </div>
+      <div class="mag-card" onclick="openModal('econosports')">
+        <img src="images/mag_econosports.png" alt="EconoSports"/>
+        <div class="mag-body"><h3>EconoSports</h3><p>Sports Business · Jan 2026</p></div>
       </div>
-      <div class="mag-card">
+      <div class="mag-card" onclick="openModal('greenshift')">
         <img src="images/mag_greenshift.png" alt="The Green Shift"/>
-        <div class="mag-body">
-          <h3>THE GREEN SHIFT</h3>
-          <p>Landscape Architecture & Climate Crisis. July 2025. Founder & Editor.</p>
-          <div style="margin-top:10px;"><span class="tag">Architecture</span> <span class="tag">Climate</span></div>
-        </div>
+        <div class="mag-body"><h3>The Green Shift</h3><p>Landscape & Climate · Jul 2025</p></div>
       </div>
-      <div class="mag-card">
+      <div class="mag-card" onclick="openModal('greenlegacy')">
         <img src="images/mag_greenlegacy.png" alt="The Green Legacy"/>
-        <div class="mag-body">
-          <h3>THE GREEN LEGACY</h3>
-          <p>Young Africans SC — Business, Power & Future. December 2025.</p>
-          <div style="margin-top:10px;"><span class="tag">Sports</span> <span class="tag">Football</span></div>
-        </div>
+        <div class="mag-body"><h3>The Green Legacy</h3><p>Young Africans SC · Dec 2025</p></div>
       </div>
-      <div class="mag-card">
+      <div class="mag-card" onclick="openModal('niffer')">
         <img src="images/mag_niffer.png" alt="Niffer Luxe"/>
-        <div class="mag-body">
-          <h3>NIFFER LUXE</h3>
-          <p>Beauty. Fashion. Scent. Identity. Lifestyle Edition — May 2026.</p>
-          <div style="margin-top:10px;"><span class="tag">Lifestyle</span> <span class="tag">Beauty</span></div>
-        </div>
+        <div class="mag-body"><h3>Niffer Luxe</h3><p>Lifestyle & Beauty · May 2026</p></div>
       </div>
     </div>
   </div>
-
 </section>
+
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
 
 <footer>
   <div class="footer-logo">JUMANNE <span>MAREGERI</span></div>
   <ul class="footer-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="story.html">Story</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html">Home</a></li><li><a href="story.html">Story</a></li>
+    <li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li>
     <li><a href="https://travex-mall.vercel.app" target="_blank">Travex Mall ↗</a></li>
     <li><a href="https://travex-finance.vercel.app" target="_blank">Travex Finance ↗</a></li>
   </ul>
@@ -488,20 +247,44 @@
 </footer>
 
 <script>
-function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
+const P = {
+  stadium:{cat:'Sports Facility · Most Proud Project',title:'Football Stadium Design',hero:'images/stadium4.png',desc:'A large-scale football stadium designed from the ground up using Live Home 3D. The project encompasses the full stadium bowl with tiered spectator stands, natural grass pitch layout, main entrance facade, press box, team facilities and VIP areas. The surrounding site includes structured parking, palm-lined access roads, pedestrian walkways, green buffer zones and landscape elements integrating the stadium into its broader urban context. This project represents my most ambitious and proudest architectural work.',tags:['Live Home 3D','Sports Facility','Site Planning','Landscape Architecture','Large Scale'],gallery:['images/stadium3.png','images/stadium5.png','images/stadium1.png','images/stadium2.png']},
+  mosque:{cat:'Civic & Religious Architecture',title:'Islamic Center',hero:'images/mosque2.png',desc:'A complete Islamic center complex featuring a central mosque with a grand blue dome and four minarets, flanked by madrasa buildings and ancillary community facilities. The design draws from classical Islamic architectural principles — arched colonnades, symmetrical composition, courtyard planning and ornamental detail. The surrounding landscape includes formal garden zones, palm planting, paved paths and dedicated parking. The project involved site planning, orientation studies, spatial flow analysis and full 3D rendering.',tags:['Live Home 3D','Mosque Design','Civic Architecture','Courtyard Planning','Site Planning'],gallery:['images/mosque1.png']},
+  bungalow:{cat:'Residential · Makongo, Dar es Salaam',title:'Luxurious Bungalow',hero:'images/bungalow1.jpg',desc:'A luxury residential bungalow designed for a site in the Makongo area of Dar es Salaam. The design integrates the home seamlessly with its landscape — featuring a swimming pool, tropical garden beds, sculpted lawn areas, outdoor deck, boundary walls and feature lighting. The architecture adopts a contemporary flat-roof aesthetic with stone cladding details, large glass openings and a recessed entrance porch. Multiple views were rendered communicating the design from arrival through to the garden and pool area.',tags:['Residential','Luxury Design','Pool Landscape','Live Home 3D','Dar es Salaam'],gallery:['images/bungalow2.jpg','images/bungalow3.jpg','images/bungalow4.jpg','images/bungalow5.jpg']},
+  commercial:{cat:'Commercial · Urban Landscape Design',title:'SS Centre — Commercial Complex',hero:'images/commercial1.jpg',desc:'Urban landscape design for the SS Centre Home City commercial complex — a large-scale retail development. The design addresses pedestrian arrival experience, outdoor seating and dining terraces, palm-lined parking access, stone paving patterns, topiary hedging and green planting buffers that soften the glass facade. Multiple perspectives were produced including aerial overview and pedestrian-level views showing the quality of materials and planting.',tags:['Commercial Landscape','Urban Design','Live Home 3D','Retail','Site Planning'],gallery:['images/commercial2.png']},
+  hotel:{cat:'Hospitality · Luxury Hotel',title:'Luxurious Hotel Design',hero:'images/hotel1.png',desc:'A multi-storey luxury hotel featuring a striking cylindrical glass tower as the central architectural form. The site is comprehensively planned with hotel facilities, a swimming pool area, outdoor lounge terrace, structured parking with tensile canopy structures, tropical planting throughout and curved road access. The landscape integrates circular themed garden beds, umbrella canopies over outdoor seating and layered planting that creates a resort-like ambiance.',tags:['Hospitality','Luxury Hotel','Site Planning','Landscape Architecture','Live Home 3D'],gallery:['images/hotel2.png']},
+  travexmall:{cat:'E-Commerce Marketplace · Live Platform',title:'Travex Mall',hero:'images/travex_mall1.png',desc:"Travex Mall is Tanzania's most advanced digital marketplace — built with AI at its core. It features multi-tier seller dashboards (Basic, Standard & Premium), AI-powered business tools, WhatsApp ordering integration, Travex Campus for university entrepreneurs, and Travex Social Vybe — Africa's first business social network. Built with Next.js 16, TypeScript, Supabase and deployed on Vercel.",tags:['Next.js 16','TypeScript','Supabase','Vercel','PWA','AI Tools'],gallery:['images/travex_mall2.png'],link:'https://travex-mall.vercel.app'},
+  travexfinance:{cat:'Financial Management SaaS · Live Platform',title:'Travex Finance',hero:'images/travex_finance.png',desc:'Travex Finance is a modern financial management system for Tanzanian retail businesses — built in Kiswahili for the local market. It allows business owners to record daily sales, manage stock levels, track customer debts and monitor monthly profits — all from one clean dashboard. Built with Next.js, Supabase and TypeScript.',tags:['SaaS','Next.js','Supabase','TypeScript','Kiswahili UI'],gallery:[],link:'https://travex-finance.vercel.app'},
+  efvs:{cat:'GovTech / TaxTech · TRA Innovation 2026',title:'Economic Footprint Verification System',hero:null,desc:'EFVS is a cross-sector tax intelligence system designed for the Tanzania Revenue Authority. The system cross-references taxpayer declarations against TANESCO, DAWASCO, mobile money platforms, NSSF social security records and TANCIS customs data — building a comprehensive economic footprint for each taxpayer. Discrepancies between declared income and actual economic activity trigger compliance review alerts.',tags:['GovTech','Tax Intelligence','Data Analytics','Product Strategy','TRA Tanzania'],gallery:[]},
+  econosports:{cat:'Sports Business Magazine · January 2026',title:'EconoSports Magazine',hero:'images/mag_econosports.png',desc:'EconoSports covers the economics, governance and investment landscape of African football. Issue 1 focuses on "African Clubs Rising" — examining how strong clubs, united leadership and the African Clubs Association are reshaping the future of African football. The magazine covers governance, investment frameworks and global partnership strategies.',tags:['Sports Business','Football','African Clubs','Magazine'],gallery:[]},
+  greenshift:{cat:'Landscape Architecture Magazine · July 2025',title:'The Green Shift Magazine',hero:'images/mag_greenshift.png',desc:'The Green Shift is a magazine I founded dedicated to the role of landscape architecture in addressing the climate crisis. The July 2025 issue covers green cities, coastal afforestation and design principles for a resilient future — featuring voices of young African designers on healing the globe.',tags:['Landscape Architecture','Climate','Sustainability','Magazine Founder'],gallery:[]},
+  greenlegacy:{cat:'Sports Magazine · December 2025',title:'The Green Legacy',hero:'images/mag_greenlegacy.png',desc:"The Green Legacy examines the business, power and future of Young Africans SC — Tanzania's richest football club. The December 2025 issue dives into the club's brand strategy, digital revolution, soccer school programme and commercial partnerships with SportPesa, Haier and AzamTV.",tags:['Football','Sports Business','Young Africans SC','Magazine'],gallery:[]},
+  niffer:{cat:'Lifestyle & Beauty Magazine · May 2026',title:'Niffer Luxe Magazine',hero:'images/mag_niffer.png',desc:'Niffer Luxe is a lifestyle and beauty magazine covering fashion, scent, beauty and identity. Issue 01 spotlights Niffer Cosmetics, Beauty & Outfits — a premium digital publication for the East African luxury lifestyle market.',tags:['Lifestyle','Beauty','Fashion','Magazine'],gallery:[]}
+};
+
+function openModal(id){
+  const p=P[id]; if(!p) return;
+  let h=`<div class="modal-cat">${p.cat}</div><h2 class="modal-title">${p.title}</h2>`;
+  if(p.hero) h+=`<img src="${p.hero}" class="modal-hero-img" alt="${p.title}"/>`;
+  h+=`<p class="modal-desc">${p.desc}</p>`;
+  h+=`<div class="modal-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join(' ')}</div>`;
+  if(p.link) h+=`<a href="${p.link}" target="_blank" rel="noopener" class="modal-link">Visit Live Site ↗</a>`;
+  if(p.gallery&&p.gallery.length>0){
+    h+=`<div class="modal-divider"></div><div class="modal-gallery-label">More Images</div><div class="modal-gallery">`;
+    p.gallery.forEach(img=>{ h+=`<img src="${img}" alt="Project image"/>`; });
+    h+=`</div>`;
+  }
+  document.getElementById('modal-content').innerHTML=h;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
 }
-function switchTab(id, btn) {
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + id).classList.add('active');
-  btn.classList.add('active');
-}
-const reveals = document.querySelectorAll('.reveal');
-const obs = new IntersectionObserver(e => {
-  e.forEach(el => { if(el.isIntersecting){ el.target.classList.add('visible'); obs.unobserve(el.target); }});
-}, { threshold: 0.08 });
-reveals.forEach(r => obs.observe(r));
+function closeModal(){ document.getElementById('modal').classList.remove('open'); document.body.style.overflow=''; }
+function closeModalOutside(e){ if(e.target===document.getElementById('modal')) closeModal(); }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+function switchTab(id,btn){ document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active')); document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active')); document.getElementById('tab-'+id).classList.add('active'); btn.classList.add('active'); }
+function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
 </script>
 </body>
 </html>
