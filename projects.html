@@ -32,7 +32,7 @@
 .proj-glow {
   position: absolute; top: -60px; right: 5%;
   width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(212,80,10,0.07) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(139,37,0,0.07) 0%, transparent 65%);
   pointer-events: none;
 }
 .proj-hero-content h1 { font-size: clamp(3rem,7vw,5.5rem); font-weight: 800; line-height: 0.95; }
@@ -46,7 +46,7 @@
 }
 .tab-btn {
   padding: 9px 22px; background: transparent; border: none; border-radius: 8px;
-  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.78rem; font-weight: 700;
+  font-family: Georgia, serif, sans-serif; font-size: 0.78rem; font-weight: 700;
   letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
   cursor: pointer; transition: all 0.2s;
 }
@@ -66,7 +66,7 @@
 .proj-card:hover .proj-card-img { transform: scale(1.04); }
 .proj-card-body { padding: 18px 20px; }
 .proj-cat { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
-.proj-card-body h3 { font-family: 'Sora',sans-serif; font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 7px; line-height: 1.2; }
+.proj-card-body h3 { font-family: 'Times New Roman', Times, serif,sans-serif; font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 7px; line-height: 1.2; }
 .proj-card-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
 .proj-open { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; }
 .mag-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
@@ -74,7 +74,7 @@
 .mag-card:hover { transform: translateY(-4px); border-color: var(--border); }
 .mag-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
 .mag-body { padding: 14px 16px; }
-.mag-body h3 { font-family: 'Sora',sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+.mag-body h3 { font-family: 'Times New Roman', Times, serif,sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 3px; }
 .mag-body p { font-size: 0.76rem; color: var(--muted); }
 /* MODAL */
 .modal-overlay {
@@ -91,16 +91,16 @@
 }
 .modal-close:hover { background: var(--gold); color: var(--bg); }
 .modal-cat { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-.modal-title { font-family: 'Sora',sans-serif; font-size: clamp(1.6rem,4vw,2.4rem); font-weight: 800; color: var(--white); margin-bottom: 22px; line-height: 1.1; }
+.modal-title { font-family: 'Times New Roman', Times, serif,sans-serif; font-size: clamp(1.6rem,4vw,2.4rem); font-weight: 800; color: var(--white); margin-bottom: 22px; line-height: 1.1; }
 .modal-hero-img { width: 100%; max-height: 460px; object-fit: cover; border-radius: 14px; margin-bottom: 28px; border: 1px solid var(--border2); }
 .modal-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.9; margin-bottom: 24px; max-width: 740px; }
 .modal-tags { margin-bottom: 28px; }
 .modal-divider { height: 1px; background: var(--border2); margin: 28px 0; }
-.modal-gallery-label { font-family: 'Sora',sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.modal-gallery-label { font-family: 'Times New Roman', Times, serif,sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
 .modal-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .modal-gallery img { width: 100%; border-radius: 10px; object-fit: cover; aspect-ratio: 16/10; display: block; border: 1px solid var(--border2); cursor: zoom-in; transition: transform 0.2s; }
 .modal-gallery img:hover { transform: scale(1.02); }
-.modal-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--gold); color: var(--bg); font-family: 'Plus Jakarta Sans',sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 8px; margin-top: 6px; transition: background 0.2s; }
+.modal-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--gold); color: var(--bg); font-family: Georgia, serif,sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 8px; margin-top: 6px; transition: background 0.2s; }
 .modal-link:hover { background: var(--gold2); }
 @media (max-width: 900px) { .proj-grid { grid-template-columns: 1fr 1fr; } .mag-grid { grid-template-columns: 1fr 1fr; } .modal-gallery { grid-template-columns: 1fr; } }
 @media (max-width: 580px) { .proj-grid { grid-template-columns: 1fr; } .tab-btn { padding: 8px 14px; font-size: 0.72rem; } }
@@ -210,7 +210,7 @@
       <div class="proj-card" onclick="openModal('efvs')">
         <div class="proj-img-wrap" style="background:var(--card2);display:flex;align-items:center;justify-content:center;aspect-ratio:16/10">
           <div style="text-align:center;padding:30px">
-            <div style="font-family:'Sora',sans-serif;font-size:2.5rem;font-weight:800;color:var(--gold)">EFVS</div>
+            <div style="font-family:'Times New Roman', Times, serif,sans-serif;font-size:2.5rem;font-weight:800;color:var(--gold)">EFVS</div>
             <div style="font-size:0.8rem;color:var(--muted);margin-top:6px">Tax Intelligence System</div>
           </div>
         </div>
