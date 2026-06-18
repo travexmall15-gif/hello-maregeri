@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Projects — Jumanne Maregeri</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+#proj-hero {
+  min-height: 40vh; display: flex; align-items: center;
+  padding: 120px 5% 60px;
+  background: var(--dark); position: relative; overflow: hidden;
+}
+.proj-hero-line {
+  position: absolute; top: 0; left: 5%; right: 5%; height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+.proj-hero-content h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.95; letter-spacing: 0.02em;
+}
+.proj-hero-content h1 span { color: var(--gold); }
+.proj-hero-content p {
+  font-size: 1rem; color: var(--gray);
+  margin-top: 16px; max-width: 500px; line-height: 1.6;
+}
+
+/* TABS */
+#projects-main { background: var(--black); padding-top: 60px; }
+.tabs {
+  display: flex; gap: 4px;
+  background: var(--card);
+  border-radius: 50px;
+  padding: 5px;
+  width: fit-content;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  padding: 10px 24px;
+  background: transparent;
+  border: none; border-radius: 50px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gray); cursor: pointer;
+  transition: all 0.25s;
+}
+.tab-btn.active {
+  background: var(--gold); color: var(--black);
+}
+.tab-btn:hover:not(.active) { color: var(--white); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* PROJECT GRID */
+.proj-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.proj-card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px; overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s;
+  cursor: pointer;
+}
+.proj-card:hover { transform: translateY(-6px); border-color: var(--gold); }
+.proj-card .proj-img {
+  width: 100%; aspect-ratio: 16/10;
+  object-fit: cover; display: block;
+  transition: transform 0.4s;
+}
+.proj-card:hover .proj-img { transform: scale(1.04); }
+.proj-img-wrap { overflow: hidden; }
+.proj-body { padding: 20px; }
+.proj-cat {
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 8px;
+}
+.proj-body h3 {
+  font-size: 1.15rem; letter-spacing: 0.04em;
+  color: var(--white); margin-bottom: 8px; line-height: 1.2;
+}
+.proj-body p {
+  font-size: 0.82rem; color: var(--gray);
+  line-height: 1.6; margin-bottom: 14px;
+}
+.proj-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+/* FEATURED card - spans 2 cols */
+.proj-featured {
+  grid-column: span 2;
+}
+.proj-featured .proj-img {
+  aspect-ratio: 21/9;
+}
+
+/* Digital cards with link */
+.proj-link-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 14px; padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.proj-link-bar a {
+  font-size: 0.78rem; font-weight: 700;
+  color: var(--gold); text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: opacity 0.2s;
+}
+.proj-link-bar a:hover { opacity: 0.7; }
+
+/* Magazine grid - portrait */
+.mag-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+}
+.mag-card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px; overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s;
+}
+.mag-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+.mag-card img {
+  width: 100%; aspect-ratio: 3/4;
+  object-fit: cover; display: block;
+}
+.mag-body { padding: 16px; }
+.mag-body h3 {
+  font-size: 1rem; letter-spacing: 0.04em;
+  color: var(--white); margin-bottom: 4px;
+}
+.mag-body p { font-size: 0.78rem; color: var(--gray); }
+
+@media (max-width: 900px) {
+  .proj-grid { grid-template-columns: 1fr 1fr; }
+  .proj-featured { grid-column: span 2; }
+  .mag-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 580px) {
+  .proj-grid { grid-template-columns: 1fr; }
+  .proj-featured { grid-column: span 1; }
+  .proj-featured .proj-img { aspect-ratio: 16/10; }
+  .mag-grid { grid-template-columns: 1fr 1fr; }
+  .tabs { gap: 3px; }
+  .tab-btn { padding: 9px 16px; font-size: 0.72rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">JM<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#whatido">About</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="index.html#whatido">About</a>
+  <a href="story.html">Story</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="proj-hero">
+  <div class="proj-hero-line"></div>
+  <div class="proj-hero-content reveal">
+    <div class="section-label">Portfolio</div>
+    <h1>MY <span>PROJECTS</span></h1>
+    <p>Architecture · Digital Products · Magazine Publishing</p>
+  </div>
+</section>
+
+<!-- PROJECTS MAIN -->
+<section id="projects-main">
+  <!-- TABS -->
+  <div class="tabs reveal">
+    <button class="tab-btn active" onclick="switchTab('architecture', this)">🏗 Architecture</button>
+    <button class="tab-btn" onclick="switchTab('digital', this)">💻 Digital</button>
+    <button class="tab-btn" onclick="switchTab('author', this)">📰 Author</button>
+  </div>
+
+  <!-- ARCHITECTURE TAB -->
+  <div class="tab-panel active" id="tab-architecture">
+    <div class="proj-grid">
+
+      <div class="proj-card proj-featured">
+        <div class="proj-img-wrap">
+          <img src="images/stadium4.png" alt="Football Stadium" class="proj-img"/>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Sports Facility · Most Proud Project</div>
+          <h3>FOOTBALL STADIUM DESIGN</h3>
+          <p>Large-scale football stadium incorporating spectator stands, pitch layout, access circulation, landscape buffer zones and ancillary public facilities. Designed entirely in Live Home 3D with full site planning.</p>
+          <div class="proj-tags">
+            <span class="tag">Live Home 3D</span>
+            <span class="tag">Sports Facility</span>
+            <span class="tag">Site Planning</span>
+            <span class="tag">Landscape Arch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="images/stadium3.png" alt="Stadium Aerial" class="proj-img"/>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Sports Facility</div>
+          <h3>STADIUM — AERIAL VIEW</h3>
+          <p>Aerial perspective showing full site layout, parking, access roads and surrounding landscape buffer zones.</p>
+          <div class="proj-tags">
+            <span class="tag">Aerial Render</span><span class="tag">Site Layout</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="images/stadium5.png" alt="Stadium Front" class="proj-img"/>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Sports Facility</div>
+          <h3>STADIUM — FRONT ELEVATION</h3>
+          <p>Front facade render showing main entrance, facade design and pedestrian approach landscaping.</p>
+          <div class="proj-tags">
+            <span class="tag">Front Elevation</span><span class="tag">Facade Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card proj-featured">
+        <div class="proj-img-wrap">
+          <img src="images/mosque1.png" alt="Islamic Center" class="proj-img"/>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Civic & Religious Architecture</div>
+          <h3>ISLAMIC CENTER</h3>
+          <p>Complete Islamic center design including mosque, madrasas and surrounding landscape. Features blue domes, minarets, arched colonnades and structured courtyard planning for community worship and education.</p>
+          <div class="proj-tags">
+            <span class="tag">Live Home 3D</span>
+            <span class="tag">Civic Arch</span>
+            <span class="tag">Site Planning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="images/mosque2.png" alt="Mosque Closeup" class="proj-img"/>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Religious Architecture</div>
+          <h3>MOSQUE — CLOSE UP</h3>
+          <p>Detailed mosque render showing dome, minarets, arched entrance and courtyard landscape.</p>
+          <div class="proj-tags">
+            <span class="tag">Mosque Design</span><span class="tag">Landscape</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="images/bungalow1.jpg" alt="Bungalow" class="proj-img"/>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Residential · Makongo DSM</div>
+          <h3>LUXURIOUS BUNGALOW</h3>
+          <p>Luxury residential bungalow for the Makongo area. Tropical landscape, pool integration and sustainable outdoor living spaces.</p>
+          <div class="proj-tags">
+            <span class="tag">Residential</span><span class="tag">Luxury</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="images/bungalow2.jpg" alt="Bungalow View 2" class="proj-img"/>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Residential</div>
+          <h3>BUNGALOW — GARDEN VIEW</h3>
+          <p>Garden and pool area render showing tropical landscaping, outdoor deck and boundary treatment.</p>
+          <div class="proj-tags">
+            <span class="tag">Landscape</span><span class="tag">Pool Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="images/bungalow3.jpg" alt="Bungalow Rear" class="proj-img"/>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Residential</div>
+          <h3>BUNGALOW — REAR ELEVATION</h3>
+          <p>Rear garden view showing architectural detailing, windows and integrated outdoor garden design.</p>
+          <div class="proj-tags">
+            <span class="tag">Architecture</span><span class="tag">Garden Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card proj-featured">
+        <div class="proj-img-wrap">
+          <img src="images/commercial1.jpg" alt="Commercial Complex" class="proj-img"/>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Commercial · Urban Landscape</div>
+          <h3>SS CENTRE — COMMERCIAL COMPLEX</h3>
+          <p>Urban landscape design for a large commercial complex. Outdoor seating areas, stone paving, palm-lined entrances, green buffer zones and pedestrian circulation integrated with the glass facade building.</p>
+          <div class="proj-tags">
+            <span class="tag">Commercial</span>
+            <span class="tag">Urban Landscape</span>
+            <span class="tag">Live Home 3D</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card proj-featured">
+        <div class="proj-img-wrap">
+          <img src="images/hotel1.png" alt="Hotel" class="proj-img"/>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Hospitality · Luxury</div>
+          <h3>LUXURIOUS HOTEL DESIGN</h3>
+          <p>Multi-storey luxury hotel with comprehensive site landscape design. Features pool, parking with tensile canopy structures, tropical planting and curved road access all integrated with a high-rise glass tower.</p>
+          <div class="proj-tags">
+            <span class="tag">Hospitality</span>
+            <span class="tag">Site Planning</span>
+            <span class="tag">Landscape Arch</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DIGITAL TAB -->
+  <div class="tab-panel" id="tab-digital">
+    <div class="proj-grid">
+
+      <div class="proj-card proj-featured">
+        <div class="proj-img-wrap">
+          <img src="images/travex_mall1.png" alt="Travex Mall" class="proj-img"/>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">E-Commerce Marketplace · Live</div>
+          <h3>TRAVEX MALL</h3>
+          <p>Africa's intelligent digital marketplace. Multi-tier seller dashboards (Basic & Premium), campus market flows, PWA support, full authentication and AI-powered features. Core product of Travex Digital Group.</p>
+          <div class="proj-tags">
+            <span class="tag">Next.js 16</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">PWA</span>
+          </div>
+          <div class="proj-link-bar">
+            <a href="https://travex-mall.vercel.app" target="_blank" rel="noopener">Visit Site ↗ travex-mall.vercel.app</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="images/travex_mall2.png" alt="Travex Social Vybe" class="proj-img"/>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Business Social Network · Live</div>
+          <h3>TRAVEX SOCIAL VYBE</h3>
+          <p>Tanzania's first business social network — inside Travex Mall. Post products, grow your brand and connect directly with buyers.</p>
+          <div class="proj-tags">
+            <span class="tag">Social Commerce</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Real-time</span>
+          </div>
+          <div class="proj-link-bar">
+            <a href="https://travex-mall.vercel.app" target="_blank" rel="noopener">Visit ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="images/travex_finance.png" alt="Travex Finance" class="proj-img"/>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">Financial SaaS · Live</div>
+          <h3>TRAVEX FINANCE</h3>
+          <p>Financial management SaaS for Tanzanian retail businesses. Record sales, manage stock, track debts — all in one Kiswahili-first interface.</p>
+          <div class="proj-tags">
+            <span class="tag">SaaS</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">Kiswahili UI</span>
+          </div>
+          <div class="proj-link-bar">
+            <a href="https://travex-finance.vercel.app" target="_blank" rel="noopener">Visit Site ↗ travex-finance.vercel.app</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card proj-featured">
+        <div class="proj-img-wrap" style="background:var(--dark);display:flex;align-items:center;justify-content:center;aspect-ratio:21/9;">
+          <div style="text-align:center;padding:40px;">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);letter-spacing:0.06em;">EFVS</div>
+            <div style="font-size:0.9rem;color:var(--gray);margin-top:8px;">Economic Footprint Verification System</div>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">GovTech / TaxTech · TRA Innovation Competition 2026</div>
+          <h3>ECONOMIC FOOTPRINT VERIFICATION SYSTEM</h3>
+          <p>Cross-sector tax intelligence system for the Tanzania Revenue Authority. Cross-references taxpayer declarations against TANESCO, DAWASCO, mobile money (M-Pesa/Airtel), NSSF and TANCIS data to detect revenue leakage at scale.</p>
+          <div class="proj-tags">
+            <span class="tag">GovTech</span>
+            <span class="tag">Data Intelligence</span>
+            <span class="tag">Tax Compliance</span>
+            <span class="tag">Product Strategy</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- AUTHOR TAB -->
+  <div class="tab-panel" id="tab-author">
+    <p style="color:var(--gray);font-size:0.9rem;margin-bottom:32px;max-width:600px;line-height:1.7;">
+      Author of digital magazines spanning architecture, lifestyle, sports, digital and tech.
+      Each magazine is researched, written, designed and edited by Jumanne Maregeri —
+      covering East Africa's most important stories.
+    </p>
+    <div class="mag-grid">
+      <div class="mag-card">
+        <img src="images/mag_econosports.png" alt="EconoSports Magazine"/>
+        <div class="mag-body">
+          <h3>ECONOSPORTS</h3>
+          <p>Sports Business Magazine — African Clubs Rising. January 2026.</p>
+          <div style="margin-top:10px;"><span class="tag">Sports</span> <span class="tag">Business</span></div>
+        </div>
+      </div>
+      <div class="mag-card">
+        <img src="images/mag_greenshift.png" alt="The Green Shift"/>
+        <div class="mag-body">
+          <h3>THE GREEN SHIFT</h3>
+          <p>Landscape Architecture & Climate Crisis. July 2025. Founder & Editor.</p>
+          <div style="margin-top:10px;"><span class="tag">Architecture</span> <span class="tag">Climate</span></div>
+        </div>
+      </div>
+      <div class="mag-card">
+        <img src="images/mag_greenlegacy.png" alt="The Green Legacy"/>
+        <div class="mag-body">
+          <h3>THE GREEN LEGACY</h3>
+          <p>Young Africans SC — Business, Power & Future. December 2025.</p>
+          <div style="margin-top:10px;"><span class="tag">Sports</span> <span class="tag">Football</span></div>
+        </div>
+      </div>
+      <div class="mag-card">
+        <img src="images/mag_niffer.png" alt="Niffer Luxe"/>
+        <div class="mag-body">
+          <h3>NIFFER LUXE</h3>
+          <p>Beauty. Fashion. Scent. Identity. Lifestyle Edition — May 2026.</p>
+          <div style="margin-top:10px;"><span class="tag">Lifestyle</span> <span class="tag">Beauty</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <div class="footer-logo">JUMANNE <span>MAREGERI</span></div>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://travex-mall.vercel.app" target="_blank">Travex Mall ↗</a></li>
+    <li><a href="https://travex-finance.vercel.app" target="_blank">Travex Finance ↗</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Jumanne Mussa Maregeri · Dar es Salaam, Tanzania</div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(e => {
+  e.forEach(el => { if(el.isIntersecting){ el.target.classList.add('visible'); obs.unobserve(el.target); }});
+}, { threshold: 0.08 });
+reveals.forEach(r => obs.observe(r));
+</script>
+</body>
+</html>
