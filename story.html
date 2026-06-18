@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>My Story — Jumanne Maregeri</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+#story-hero {
+  min-height: 50vh; display: flex; align-items: center;
+  padding: 120px 5% 80px;
+  background: linear-gradient(135deg, var(--dark) 0%, var(--black) 60%);
+  position: relative; overflow: hidden;
+}
+.story-hero-grid {
+  position: absolute; inset: 0; opacity: 0.03;
+  background-image:
+    linear-gradient(rgba(201,168,76,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+.story-hero-content { max-width: 700px; position: relative; z-index: 1; }
+.story-hero-content h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.95; letter-spacing: 0.02em;
+}
+.story-hero-content h1 span { color: var(--gold); }
+.story-hero-content p {
+  font-size: 1.1rem; color: rgba(255,255,255,0.55);
+  line-height: 1.7; margin-top: 20px; max-width: 540px;
+}
+
+/* STORY TIMELINE */
+#mystory { background: var(--black); }
+.timeline { max-width: 800px; }
+.timeline-item {
+  display: grid; grid-template-columns: 100px 1fr;
+  gap: 32px; margin-bottom: 0;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-year {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem; color: var(--gold);
+  line-height: 1; padding-top: 4px;
+}
+.timeline-body h3 {
+  font-size: 1.1rem; letter-spacing: 0.04em;
+  color: var(--white); margin-bottom: 8px;
+}
+.timeline-body p {
+  font-size: 0.9rem; color: var(--gray);
+  line-height: 1.7;
+}
+.timeline-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--gold);
+  position: absolute; left: 95px; top: 40px;
+}
+
+/* VISION MISSION */
+#vision { background: var(--dark); }
+.vm-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;
+}
+.vm-card {
+  padding: 36px 28px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  position: relative; overflow: hidden;
+  transition: transform 0.25s;
+}
+.vm-card:hover { transform: translateY(-4px); }
+.vm-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--gold);
+}
+.vm-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem; color: rgba(201,168,76,0.06);
+  position: absolute; top: 10px; right: 16px;
+  line-height: 1;
+}
+.vm-icon { font-size: 2.2rem; margin-bottom: 20px; }
+.vm-card h3 {
+  font-size: 1.3rem; letter-spacing: 0.06em;
+  color: var(--white); margin-bottom: 14px;
+}
+.vm-card p {
+  font-size: 0.88rem; color: var(--gray);
+  line-height: 1.7;
+}
+
+/* VALUES */
+#values { background: var(--black); }
+.values-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+}
+.value-item {
+  padding: 24px 20px;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 14px;
+  background: var(--card);
+  transition: border-color 0.2s;
+}
+.value-item:hover { border-color: var(--gold); }
+.value-item h4 {
+  font-size: 0.9rem; letter-spacing: 0.06em;
+  color: var(--gold); margin-bottom: 8px;
+}
+.value-item p {
+  font-size: 0.82rem; color: var(--gray); line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .vm-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .timeline-item { grid-template-columns: 70px 1fr; gap: 20px; }
+  .timeline-dot { left: 64px; }
+}
+@media (max-width: 480px) {
+  .values-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">JM<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#whatido">About</a></li>
+    <li><a href="story.html" class="active">Story</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="index.html#whatido">About</a>
+  <a href="story.html">My Story</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="story-hero">
+  <div class="story-hero-grid"></div>
+  <div class="story-hero-content reveal">
+    <div class="section-label">About Me</div>
+    <h1>MY <span>STORY</span></h1>
+    <p>
+      From Dar es Salaam to building digital products for East Africa —
+      the journey of a landscape architect, developer and founder.
+    </p>
+  </div>
+</section>
+
+<!-- STORY TIMELINE -->
+<section id="mystory">
+  <div class="section-label">The Journey</div>
+  <h2>HOW IT ALL <span>STARTED</span></h2>
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-year">2003</div>
+      <div class="timeline-body">
+        <h3>BORN IN TANZANIA</h3>
+        <p>
+          Born on 11th March 2003 in Tanzania. Grew up with a natural curiosity
+          about how spaces are designed and how people interact with their environment.
+          That early curiosity laid the foundation for everything that followed.
+        </p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2023</div>
+      <div class="timeline-body">
+        <h3>ARDHI UNIVERSITY · LANDSCAPE ARCHITECTURE</h3>
+        <p>
+          Enrolled in BSc Landscape Architecture at Ardhi University, Dar es Salaam.
+          Here I discovered the power of design to address environmental challenges.
+          I became passionate about climate-responsive urban landscapes, coastal design
+          and how architecture can answer Africa's urban growth challenges.
+        </p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2023</div>
+      <div class="timeline-body">
+        <h3>FOUNDED THE GREEN SHIFT MAGAZINE</h3>
+        <p>
+          Launched The Green Shift Magazine — promoting sustainable landscape
+          architecture and climate solutions in Africa. This was my first step into
+          media and editorial work, covering green cities, coastal afforestation,
+          and design principles for a resilient future.
+        </p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2024</div>
+      <div class="timeline-body">
+        <h3>CO-FOUNDED SMARTSCAPE ARCHITECTURE</h3>
+        <p>
+          Co-founded SmartScape Architecture — a platform for education, advocacy
+          and innovation in landscape architecture across Africa. We produce content
+          and resources advancing the field of landscape practice on the continent.
+        </p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2025</div>
+      <div class="timeline-body">
+        <h3>INDUSTRIAL TRAINING & ARCHITECTURE PROJECTS</h3>
+        <p>
+          Completed industrial training at MK ARCHPLAN (Moshi) and SAPA Construction
+          (Dar es Salaam). During this period I designed and rendered major projects
+          including a football stadium, Islamic center, luxurious bungalows and
+          commercial complex landscapes — all using ArchiCAD and Lumion.
+        </p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2026</div>
+      <div class="timeline-body">
+        <h3>FOUNDED TRAVEX DIGITAL GROUP (TDG)</h3>
+        <p>
+          Founded Travex Digital Group — a digital ventures company building
+          marketplace and fintech products for East African SMEs. Launched
+          Travex Mall (Africa's intelligent digital marketplace) and Travex Finance
+          (financial management SaaS). Currently leading product vision, full-stack
+          development and business strategy across the TDG ecosystem.
+        </p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2026</div>
+      <div class="timeline-body">
+        <h3>TRIPLE A ARCHITECTS · INTERN LANDSCAPE ARCHITECT</h3>
+        <p>
+          Worked as an Intern Landscape Architect at Triple A Architects in
+          Dar es Salaam (January – June 2026). Produced site plans, floor plans,
+          sections and landscape proposals for residential, mosque and sports
+          facility projects.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section id="vision">
+  <div class="section-label">Purpose</div>
+  <h2>VISION, MISSION<br/>&amp; <span>VALUES</span></h2>
+  <div class="vm-grid reveal">
+    <div class="vm-card">
+      <div class="vm-number">01</div>
+      <div class="vm-icon">🔭</div>
+      <h3>VISION</h3>
+      <p>
+        To be a force that shapes East Africa's built and digital environments —
+        designing cities that breathe, and building platforms that empower every
+        African entrepreneur.
+      </p>
+    </div>
+    <div class="vm-card">
+      <div class="vm-number">02</div>
+      <div class="vm-icon">🎯</div>
+      <h3>MISSION</h3>
+      <p>
+        To deliver world-class landscape architecture, digital products and media
+        that solve real problems for East African communities — bridging the gap
+        between physical design and digital innovation.
+      </p>
+    </div>
+    <div class="vm-card">
+      <div class="vm-number">03</div>
+      <div class="vm-icon">⚡</div>
+      <h3>APPROACH</h3>
+      <p>
+        I move fast, build things that work, and always think about impact.
+        Whether it's a landscape proposal or a production app — I ship real work
+        that serves real people.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section id="values">
+  <div class="section-label">What Drives Me</div>
+  <h2>CORE <span>VALUES</span></h2>
+  <div class="values-grid reveal">
+    <div class="value-item">
+      <h4>🌿 SUSTAINABILITY</h4>
+      <p>Every design decision should consider its environmental impact and long-term resilience.</p>
+    </div>
+    <div class="value-item">
+      <h4>🚀 EXECUTION</h4>
+      <p>Ideas are only as good as their execution. I ship, iterate and improve.</p>
+    </div>
+    <div class="value-item">
+      <h4>🌍 AFRICA FIRST</h4>
+      <p>Building for East Africa's context, needs and opportunities — not copying the West.</p>
+    </div>
+    <div class="value-item">
+      <h4>📖 KNOWLEDGE</h4>
+      <p>Continuous learning across architecture, tech, media and business.</p>
+    </div>
+    <div class="value-item">
+      <h4>🤝 COMMUNITY</h4>
+      <p>Creating value for the communities I serve — businesses, students, creators.</p>
+    </div>
+    <div class="value-item">
+      <h4>💡 INNOVATION</h4>
+      <p>Finding new approaches to old problems — in design, tech and media.</p>
+    </div>
+    <div class="value-item">
+      <h4>🎯 IMPACT</h4>
+      <p>Every project should leave a measurable, positive mark on the people it touches.</p>
+    </div>
+    <div class="value-item">
+      <h4>🔥 BOLDNESS</h4>
+      <p>Taking on large-scale challenges others avoid — football stadiums, digital ecosystems, climate advocacy.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">JUMANNE <span>MAREGERI</span></div>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="story.html">Story</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://travex-mall.vercel.app" target="_blank">Travex Mall ↗</a></li>
+    <li><a href="https://travex-finance.vercel.app" target="_blank">Travex Finance ↗</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Jumanne Mussa Maregeri · Dar es Salaam, Tanzania</div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(e => {
+  e.forEach(el => { if(el.isIntersecting){ el.target.classList.add('visible'); obs.unobserve(el.target); }});
+}, { threshold: 0.08 });
+reveals.forEach(r => obs.observe(r));
+</script>
+</body>
+</html>
