@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hello-maregeri.vercel.app/sitemap.xml
