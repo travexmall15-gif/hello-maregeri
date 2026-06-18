@@ -9,255 +9,163 @@
 /* ── HERO ── */
 #hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding-top: 64px;
-  padding-left: 5%; padding-right: 0;
+  display: flex; align-items: center;
+  padding: 100px 5% 80px;
   position: relative; overflow: hidden;
-  gap: 0;
 }
-.hero-bg-grid {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
-  background-size: 50px 50px;
+.hero-glow {
+  position: absolute;
+  top: -100px; right: 0;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 65%);
   pointer-events: none;
 }
-.hero-left { position: relative; z-index: 1; padding-right: 40px; }
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px; align-items: center;
+  width: 100%; max-width: 1100px;
+  position: relative; z-index: 1;
+}
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 6px 14px;
+  padding: 5px 14px; border-radius: 20px;
   border: 1px solid var(--border);
-  border-radius: 50px;
-  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--gold);
   background: rgba(201,168,76,0.06);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 .hero-badge::before {
-  content: ''; display: block;
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--gold);
-  animation: pulse 2s infinite;
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold); animation: blink 2s infinite;
 }
-@keyframes pulse {
-  0%,100% { opacity: 1; } 50% { opacity: 0.3; }
-}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
 .hero-left h1 {
-  font-size: clamp(3rem, 6vw, 6rem);
-  line-height: 0.95; margin-bottom: 12px;
-  letter-spacing: 0.02em;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 800; line-height: 1.0;
+  color: var(--white); margin-bottom: 6px;
+  letter-spacing: -0.01em;
 }
-.hero-left h1 .lime { color: var(--gold); }
-.hero-roles {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin: 20px 0 24px;
+.hero-left h1 span { color: var(--gold); }
+.hero-subtitle {
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 20px;
 }
-.role-chip {
-  padding: 5px 14px;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 50px;
-  font-size: 0.75rem; font-weight: 500;
-  color: var(--gray);
-  transition: all 0.2s;
-}
-.role-chip:hover { border-color: var(--gold); color: var(--gold); }
 .hero-desc {
-  font-size: 1rem; color: rgba(255,255,255,0.55);
-  line-height: 1.7; max-width: 480px; margin-bottom: 36px;
+  font-size: 0.98rem; color: var(--muted);
+  line-height: 1.8; max-width: 520px; margin-bottom: 32px;
 }
-.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
 .hero-stats {
-  display: flex; gap: 36px;
-  padding-top: 36px;
-  border-top: 1px solid var(--border);
+  display: flex; gap: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border2);
 }
-.stat-num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.2rem; color: var(--gold); line-height: 1;
+.stat-n {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.9rem; font-weight: 800;
+  color: var(--gold); line-height: 1;
 }
-.stat-label {
-  font-size: 0.72rem; font-weight: 500;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--gray); margin-top: 3px;
+.stat-l {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted); margin-top: 3px;
 }
 
-/* Hero photo */
-.hero-right {
-  position: relative; height: 100vh;
-  display: flex; align-items: flex-end; justify-content: center;
-}
-.hero-photo-wrap {
-  position: relative; width: 100%; height: 90%;
+/* PHOTO CIRCLE */
+.hero-photo-side { display: flex; align-items: center; justify-content: center; }
+.photo-circle {
+  width: 180px; height: 180px; border-radius: 50%;
   overflow: hidden;
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 0 8px rgba(201,168,76,0.08), 0 20px 60px rgba(0,0,0,0.4);
+  flex-shrink: 0;
 }
-.hero-photo-wrap::before {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 30%;
-  background: linear-gradient(to top, var(--black), transparent);
-  z-index: 1;
-}
-.hero-photo-wrap::after {
-  content: '';
-  position: absolute; top: 0; left: 0; bottom: 0;
-  width: 40%;
-  background: linear-gradient(to right, var(--black), transparent);
-  z-index: 1;
-}
-.hero-photo {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center top;
-  display: block;
-}
-.hero-lime-bar {
-  position: absolute; top: 80px; right: 0;
-  width: 4px; height: 60%;
-  background: linear-gradient(to bottom, var(--gold), transparent);
-}
+.photo-circle img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
 /* ── TDG SECTION ── */
 #tdg { background: var(--dark); }
-.tdg-grid {
+.tdg-wrap {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 64px; align-items: center;
+  gap: 56px; align-items: center;
 }
-.tdg-tag {
-  display: inline-block;
-  padding: 4px 12px;
-  background: rgba(201,168,76,0.1);
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  font-size: 0.7rem; font-weight: 700;
+.tdg-eyebrow {
+  display: inline-block; padding: 4px 12px;
+  background: rgba(201,168,76,0.1); border: 1px solid var(--border);
+  border-radius: 6px; font-size: 0.68rem; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 16px;
+  color: var(--gold); margin-bottom: 14px;
 }
-.tdg-text h2 { margin-bottom: 20px; }
+.tdg-text h2 { margin-bottom: 16px; }
 .tdg-text p {
-  font-size: 0.96rem; color: rgba(255,255,255,0.6);
-  line-height: 1.8; margin-bottom: 16px;
+  font-size: 0.94rem; color: var(--muted);
+  line-height: 1.8; margin-bottom: 14px;
 }
-.tdg-products {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-  margin-top: 8px;
+.tdg-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 6px; }
+.tdg-card {
+  display: block; padding: 18px;
+  background: var(--card2); border: 1px solid var(--border2);
+  border-radius: 12px; text-decoration: none;
+  transition: all 0.2s;
 }
-.product-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 20px;
-  text-decoration: none;
-  transition: all 0.25s;
-  display: block;
+.tdg-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.tdg-card-label {
+  font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
 }
-.product-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-3px);
+.tdg-card h4 {
+  font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 700;
+  color: var(--white); margin-bottom: 5px;
 }
-.product-card .p-label {
-  font-size: 0.68rem; font-weight: 700;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 6px;
-}
-.product-card h4 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.1rem; letter-spacing: 0.04em;
-  color: var(--white); margin-bottom: 6px;
-}
-.product-card p {
-  font-size: 0.78rem; color: var(--gray); line-height: 1.5;
-  margin-bottom: 12px;
-}
-.product-card .p-link {
-  font-size: 0.72rem; font-weight: 600;
-  color: var(--gold); letter-spacing: 0.06em;
-}
-.tdg-visual {
-  position: relative;
-}
-.tdg-screens {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-}
-.screen-img {
-  border-radius: 14px; overflow: hidden;
-  border: 2px solid var(--border);
-  transition: border-color 0.2s;
-}
-.screen-img:hover { border-color: var(--gold); }
-.screen-img img {
-  width: 100%; display: block;
-  object-fit: cover;
-}
-.screen-img:first-child {
-  grid-column: 1 / -1;
-}
+.tdg-card p { font-size: 0.76rem; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
+.tdg-card-link { font-size: 0.7rem; font-weight: 700; color: var(--gold); letter-spacing: 0.04em; }
 
-/* ── WHAT I DO ── */
-#whatido { background: var(--black); }
-.services-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-}
-.service-item {
-  padding: 28px 24px;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  background: var(--card);
-  transition: all 0.25s;
-  position: relative; overflow: hidden;
-}
-.service-item::before {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 3px; background: var(--gold);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform 0.3s;
-}
-.service-item:hover::before { transform: scaleX(1); }
-.service-item:hover { border-color: rgba(201,168,76,0.2); }
-.service-icon {
-  font-size: 2rem; margin-bottom: 16px;
-}
-.service-item h3 {
-  font-size: 1.1rem; letter-spacing: 0.04em;
-  color: var(--white); margin-bottom: 10px;
-}
-.service-item p {
-  font-size: 0.84rem; color: var(--gray);
-  line-height: 1.6;
-}
+/* screens */
+.tdg-screens { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.screen { border-radius: 12px; overflow: hidden; border: 1px solid var(--border2); transition: border-color 0.2s; }
+.screen:hover { border-color: var(--border); }
+.screen img { width: 100%; display: block; object-fit: cover; }
+.screen.full { grid-column: 1 / -1; }
 
-/* RESPONSIVE */
+/* ── SERVICES ── */
+#services { background: var(--bg); }
+.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.svc {
+  padding: 26px 22px;
+  background: var(--card); border: 1px solid var(--border2);
+  border-radius: 14px; transition: all 0.25s;
+  border-bottom: 2px solid transparent;
+}
+.svc:hover { border-bottom-color: var(--gold); border-color: var(--border); }
+.svc-icon { font-size: 1.8rem; margin-bottom: 14px; }
+.svc h3 {
+  font-family: 'Sora', sans-serif; font-size: 0.92rem; font-weight: 700;
+  color: var(--white); margin-bottom: 8px; letter-spacing: 0.02em;
+}
+.svc p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
 @media (max-width: 900px) {
-  #hero {
-    grid-template-columns: 1fr;
-    padding: 120px 4% 60px;
-    min-height: auto;
-  }
-  .hero-right { height: 340px; border-radius: 20px; overflow: hidden; }
-  .hero-photo-wrap { height: 100%; border-radius: 20px; }
-  .hero-left { padding-right: 0; }
-  .tdg-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+  .hero-photo-side { order: -1; }
+  .photo-circle { width: 130px; height: 130px; }
+  .tdg-wrap { grid-template-columns: 1fr; gap: 36px; }
   .services-grid { grid-template-columns: 1fr 1fr; }
-  .tdg-screens { grid-template-columns: 1fr 1fr; }
-  .tdg-screens .screen-img:first-child { grid-column: auto; }
 }
-@media (max-width: 580px) {
-  .hero-stats { gap: 20px; }
+@media (max-width: 560px) {
+  .hero-stats { gap: 18px; }
   .services-grid { grid-template-columns: 1fr; }
-  .tdg-products { grid-template-columns: 1fr; }
+  .tdg-cards { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">JM<span>.</span></a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="index.html#whatido">About</a></li>
+    <li><a href="index.html#services">About</a></li>
     <li><a href="story.html">Story</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -268,7 +176,7 @@
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
-  <a href="index.html#whatido">About</a>
+  <a href="index.html#services">About</a>
   <a href="story.html">Story</a>
   <a href="projects.html">Projects</a>
   <a href="contact.html">Contact</a>
@@ -276,137 +184,83 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg-grid"></div>
-  <div class="hero-left reveal">
-    <div class="hero-badge">Dar es Salaam, Tanzania · 2026</div>
-    <h1>
-      JUMANNE<br/>
-      <span class="lime">MAREGERI</span>
-    </h1>
-    <div class="hero-roles">
-      <span class="role-chip">Landscape Architect</span>
-      <span class="role-chip">Full-Stack Developer</span>
-      <span class="role-chip">Founder · TDG</span>
-      <span class="role-chip">Magazine Author</span>
-    </div>
-    <p class="hero-desc">
-      Building digital products and designing spaces that shape East Africa's future —
-      from AI-powered marketplaces to climate-responsive landscapes.
-    </p>
-    <div class="hero-btns">
-      <a href="projects.html" class="btn-lime">View Projects →</a>
-      <a href="contact.html" class="btn-outline">Contact Me</a>
-    </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">9+</div>
-        <div class="stat-label">Projects</div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-left reveal">
+      <div class="hero-badge">Dar es Salaam, Tanzania · Est. 2026</div>
+      <h1>Jumanne<br/><span>Maregeri</span></h1>
+      <div class="hero-subtitle">Landscape Architect · Developer · Founder · Author</div>
+      <p class="hero-desc">
+        Building digital products and designing spaces that shape East Africa's future —
+        from AI-powered marketplaces to climate-responsive landscape architecture.
+      </p>
+      <div class="hero-btns">
+        <a href="projects.html" class="btn-gold">View Projects →</a>
+        <a href="contact.html" class="btn-outline">Get In Touch</a>
       </div>
-      <div>
-        <div class="stat-num">4</div>
-        <div class="stat-label">Magazines</div>
-      </div>
-      <div>
-        <div class="stat-num">3</div>
-        <div class="stat-label">Ventures</div>
+      <div class="hero-stats">
+        <div><div class="stat-n">9+</div><div class="stat-l">Projects</div></div>
+        <div><div class="stat-n">4</div><div class="stat-l">Magazines</div></div>
+        <div><div class="stat-n">3</div><div class="stat-l">Ventures</div></div>
       </div>
     </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-lime-bar"></div>
-    <div class="hero-photo-wrap">
-      <img src="images/me.jpg" alt="Jumanne Maregeri" class="hero-photo"/>
+    <div class="hero-photo-side reveal">
+      <div class="photo-circle">
+        <img src="images/me.jpg" alt="Jumanne Maregeri"/>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- TDG SECTION -->
+<!-- TDG -->
 <section id="tdg">
-  <div class="tdg-grid">
-    <div class="tdg-text reveal">
-      <span class="tdg-tag">Travex Digital Group</span>
+  <div class="tdg-wrap">
+    <div class="reveal">
+      <span class="tdg-eyebrow">◆ Travex Digital Group</span>
       <h2>FOUNDER &<br/><span>VISION LEAD</span></h2>
-      <p>
-        I founded Travex Digital Group (TDG) — a digital ventures company building
-        marketplace and fintech products for East African SMEs. TDG is on a mission
-        to digitise commerce across Tanzania and East Africa.
-      </p>
-      <p>
-        From Dar es Salaam, we ship production-ready web applications that serve
-        real businesses and real people every day.
-      </p>
-      <div class="tdg-products">
-        <a href="https://travex-mall.vercel.app" target="_blank" rel="noopener" class="product-card">
-          <div class="p-label">Live Product</div>
+      <p>I founded Travex Digital Group (TDG) — Tanzania's pioneering digital ventures company building marketplace and fintech products for East African SMEs.</p>
+      <p>From Dar es Salaam, we ship production-ready platforms that serve real businesses every day — from AI-powered marketplaces to financial management tools.</p>
+      <div class="tdg-cards">
+        <a href="https://travex-mall.vercel.app" target="_blank" rel="noopener" class="tdg-card">
+          <div class="tdg-card-label">● Live Platform</div>
           <h4>Travex Mall</h4>
           <p>Africa's intelligent digital marketplace for Tanzanian entrepreneurs.</p>
-          <div class="p-link">travex-mall.vercel.app ↗</div>
+          <div class="tdg-card-link">travex-mall.vercel.app ↗</div>
         </a>
-        <a href="https://travex-finance.vercel.app" target="_blank" rel="noopener" class="product-card">
-          <div class="p-label">Live Product</div>
+        <a href="https://travex-finance.vercel.app" target="_blank" rel="noopener" class="tdg-card">
+          <div class="tdg-card-label">● Live Platform</div>
           <h4>Travex Finance</h4>
           <p>Financial management SaaS for Tanzanian retail businesses.</p>
-          <div class="p-link">travex-finance.vercel.app ↗</div>
+          <div class="tdg-card-link">travex-finance.vercel.app ↗</div>
         </a>
       </div>
     </div>
-    <div class="tdg-visual reveal">
+    <div class="reveal">
       <div class="tdg-screens">
-        <div class="screen-img">
-          <img src="images/travex_mall1.png" alt="Travex Mall"/>
-        </div>
-        <div class="screen-img">
-          <img src="images/travex_mall2.png" alt="Travex Social Vybe"/>
-        </div>
-        <div class="screen-img">
-          <img src="images/travex_finance.png" alt="Travex Finance"/>
-        </div>
+        <div class="screen full"><img src="images/travex_mall1.png" alt="Travex Mall"/></div>
+        <div class="screen"><img src="images/travex_mall2.png" alt="Social Vybe"/></div>
+        <div class="screen"><img src="images/travex_finance.png" alt="Travex Finance"/></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT I DO -->
-<section id="whatido">
+<!-- SERVICES -->
+<section id="services">
   <div class="reveal">
-    <div class="section-label">What I Do</div>
+    <div class="label">What I Do</div>
     <h2>SERVICES &<br/><span>CAPABILITIES</span></h2>
   </div>
   <div class="services-grid reveal">
-    <div class="service-item">
-      <div class="service-icon">🏗</div>
-      <h3>LANDSCAPE ARCHITECTURE</h3>
-      <p>Site planning, 3D rendering and concept design for residential, civic, sports and commercial projects using ArchiCAD and Lumion.</p>
-    </div>
-    <div class="service-item">
-      <div class="service-icon">💻</div>
-      <h3>FULL-STACK DEVELOPMENT</h3>
-      <p>End-to-end web applications built with Next.js, TypeScript, Supabase and Vercel — from concept to live deployment.</p>
-    </div>
-    <div class="service-item">
-      <div class="service-icon">🤖</div>
-      <h3>AI & DIGITAL PRODUCTS</h3>
-      <p>AI-powered applications leveraging Claude and Gemini APIs. Product strategy, roadmapping and venture building for East African markets.</p>
-    </div>
-    <div class="service-item">
-      <div class="service-icon">📰</div>
-      <h3>MAGAZINE AUTHORING</h3>
-      <p>Author of magazines spanning architecture, lifestyle, sports, digital and tech. Editorial strategy and content for East African audiences.</p>
-    </div>
-    <div class="service-item">
-      <div class="service-icon">🎨</div>
-      <h3>GRAPHIC DESIGN</h3>
-      <p>Poster design, magazine layouts, brand visuals and digital content creation using Canva and professional design tools.</p>
-    </div>
-    <div class="service-item">
-      <div class="service-icon">🌿</div>
-      <h3>SUSTAINABILITY ADVOCACY</h3>
-      <p>Founder of The Green Shift Magazine — advancing climate-responsive design and sustainable architecture across Africa.</p>
-    </div>
+    <div class="svc"><div class="svc-icon">🏗</div><h3>Landscape Architecture</h3><p>Site planning, 3D rendering and concept design for residential, civic, sports and commercial projects using ArchiCAD and Lumion.</p></div>
+    <div class="svc"><div class="svc-icon">💻</div><h3>Full-Stack Development</h3><p>End-to-end web applications built with Next.js, TypeScript, Supabase and Vercel — from concept to live deployment.</p></div>
+    <div class="svc"><div class="svc-icon">🤖</div><h3>AI & Digital Products</h3><p>AI-powered applications using Claude and Gemini APIs. Product strategy and venture building for East African markets.</p></div>
+    <div class="svc"><div class="svc-icon">📰</div><h3>Magazine Authoring</h3><p>Author of magazines spanning architecture, lifestyle, sports, digital and tech. Editorial strategy for East African audiences.</p></div>
+    <div class="svc"><div class="svc-icon">🎨</div><h3>Graphic Design</h3><p>Poster design, magazine layouts, brand visuals and digital content creation using Canva and design tools.</p></div>
+    <div class="svc"><div class="svc-icon">🌿</div><h3>Sustainability Advocacy</h3><p>Founder of The Green Shift Magazine — advancing climate-responsive design and sustainable architecture across Africa.</p></div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">JUMANNE <span>MAREGERI</span></div>
   <ul class="footer-links">
@@ -417,21 +271,13 @@
     <li><a href="https://travex-mall.vercel.app" target="_blank">Travex Mall ↗</a></li>
     <li><a href="https://travex-finance.vercel.app" target="_blank">Travex Finance ↗</a></li>
   </ul>
-  <div class="footer-copy">
-    © 2026 Jumanne Mussa Maregeri · Dar es Salaam, Tanzania ·
-    jmaregeri006@gmail.com · +255 651 919 915
-  </div>
+  <div class="footer-copy">© 2026 Jumanne Mussa Maregeri · Dar es Salaam, Tanzania · jmaregeri006@gmail.com · +255 651 919 915</div>
 </footer>
 
 <script>
-function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-const reveals = document.querySelectorAll('.reveal');
-const obs = new IntersectionObserver(e => {
-  e.forEach(el => { if(el.isIntersecting){ el.target.classList.add('visible'); obs.unobserve(el.target); }});
-}, { threshold: 0.1 });
-reveals.forEach(r => obs.observe(r));
+function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+const obs = new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
 </script>
 </body>
 </html>
