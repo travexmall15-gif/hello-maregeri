@@ -186,6 +186,15 @@ footer {
 .footer-links a:hover { color: var(--gold); }
 .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.15); margin-top: 12px; }
 
+
+/* ── JUSTIFIED TEXT ── */
+p, li, .hero-desc, .modal-desc, .story-content p,
+.svc p, .card-body p, .tdg-card p, .vm-card p,
+.value p, .exp-body li, .about-text p, .timeline-body p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 /* ── REVEAL ── */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
