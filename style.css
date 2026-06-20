@@ -14,10 +14,10 @@
 
   /* Text */
   --dark:     #052E16;
-  --text:     #1C2B22;
-  --text2:    #374151;
-  --muted:    #6B7280;
-  --light:    #9CA3AF;
+  --text:     #000000;
+  --text2:    #111111;
+  --muted:    #333333;
+  --light:    #555555;
 
   /* Cards, borders */
   --card:     #FFFFFF;
@@ -40,7 +40,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
-  color: var(--text);
+  color: #000000;
   overflow-x: hidden;
   line-height: 1.7;
   font-size: 16px;
@@ -71,7 +71,7 @@ nav {
 .nav-links a {
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem; font-weight: 500;
-  color: var(--muted); text-decoration: none;
+  color: #111111; text-decoration: none;
   transition: color 0.2s;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--green); }
@@ -91,7 +91,7 @@ nav {
 .mobile-menu a {
   display: block; padding: 12px 0;
   font-size: 0.9rem; font-weight: 500;
-  color: var(--muted); text-decoration: none;
+  color: #111111; text-decoration: none;
   border-bottom: 1px solid var(--border2);
   transition: color 0.2s;
 }
@@ -130,7 +130,7 @@ section { padding: 96px 5%; background: var(--bg); }
 
 .label {
   font-size: 0.72rem; font-weight: 700;
-  color: var(--green2);
+  color: var(--green);
   text-transform: uppercase; letter-spacing: 0.12em;
   margin-bottom: 12px; display: block;
 }
@@ -154,7 +154,7 @@ h2 span, h2 .gold { color: var(--green2); }
 
 h3 { font-size: 1.1rem; font-weight: 700; color: var(--green); }
 
-p { color: var(--text2); font-size: 0.95rem; line-height: 1.75; }
+p { color: #000000; font-size: 0.95rem; line-height: 1.75; }
 
 /* ── CARDS ── */
 .card {
@@ -169,15 +169,15 @@ p { color: var(--text2); font-size: 0.95rem; line-height: 1.75; }
 .card-body { padding: 20px; }
 .card-cat {
   font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--green2); margin-bottom: 6px;
+  text-transform: uppercase; color: var(--green); margin-bottom: 6px;
 }
 .card-body h3 { font-size: 1rem; font-weight: 700; color: var(--green); margin-bottom: 6px; }
-.card-body p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+.card-body p { font-size: 0.85rem; color: #111111; line-height: 1.65; }
 
 .tag {
   display: inline-block; padding: 3px 12px;
   font-size: 0.7rem; font-weight: 600;
-  color: var(--green); background: #ECFDF5;
+  color: #000000; background: #ECFDF5;
   border: 1px solid #D1FAE5;
   border-radius: 20px; margin: 2px;
 }
@@ -316,13 +316,13 @@ p, li, .hero-desc, .modal-desc,
 .proj-card:hover { border-color: var(--green); }
 .proj-cat { color: var(--green2); }
 .proj-card-body h3 { color: var(--green); }
-.proj-card-body p { color: var(--muted); }
+.proj-card-body p { color: #111111; }
 .proj-open { color: var(--green2); }
 
 /* Mag cards */
 .mag-card { background: #FFFFFF; border-color: #D1FAE5; }
 .mag-body h3 { color: var(--green); }
-.mag-body p { color: var(--muted); }
+.mag-body p { color: #111111; }
 
 /* Story page */
 .timeline-marker { background: var(--green); }
@@ -411,3 +411,29 @@ input, textarea, label { color: #111111; }
 footer, footer p, footer a, footer .footer-copy { color: rgba(255,255,255,0.5) !important; }
 footer .footer-logo { color: #FFFFFF !important; }
 footer .footer-links a:hover { color: #FFFFFF !important; }
+
+/* ── GLOBAL: white bg = black text, green titles ── */
+section p, section li, section span:not(.label):not(.skill-pill),
+.card p, .card li, .card-body p,
+.proj-card-body p, .mag-body p,
+.svc p, .about-text p, .timeline-body, .timeline-body p,
+.story-content p, .vm-card p, .value p { 
+  color: #000000 !important; 
+}
+section h1, section h2, section h3, section h4,
+.card h3, .card-body h3, .proj-card-body h3, .mag-body h3 {
+  color: #052E16 !important;
+}
+
+/* Hero overrides — dark green bg, everything white */
+#hero *, #hero p, #hero h1, #hero h2, #hero h3, #hero span,
+#hero .hero-subtitle, #hero .hero-desc, #hero .stat-l {
+  color: #FFFFFF !important;
+}
+#hero h1 span, #hero .stat-n, #hero .hero-badge { 
+  color: #FBBF24 !important; 
+}
+#hero .hero-badge::before { background: #FBBF24 !important; }
+
+/* Vision text specifically */
+.hero-subtitle { color: #FFFFFF !important; }
