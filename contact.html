@@ -33,9 +33,9 @@
   font-size: clamp(3rem, 8vw, 6rem);
   line-height: 0.95; letter-spacing: 0.02em;
 }
-.contact-hero-content h1 span { color: var(--gold); }
+.contact-hero-content h1 span { color: #FBBF24; }
 .contact-hero-content p {
-  font-size: 1rem; color: var(--gray);
+  font-size: 1rem; color: rgba(255,255,255,0.75);
   margin-top: 16px; max-width: 480px; line-height: 1.6;
 }
 
@@ -110,7 +110,7 @@
 .form-group label {
   display: block; font-size: 0.72rem; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--gray); margin-bottom: 8px;
+  color: var(--muted); margin-bottom: 8px;
 }
 .form-group input,
 .form-group textarea,
@@ -151,21 +151,21 @@
 #proj-hero *, #proj-hero h1, #proj-hero p { color: #FFFFFF !important; }
 #contact-hero *, #contact-hero h1, #contact-hero p { color: #FFFFFF !important; }
 
-#services *, #services h2, #services h3, #services h4,
-#services p, #services .label, #services .svc p { color: #FFFFFF !important; }
+/* no #services section on this page */
 
 footer *, footer p, footer h1, footer h2, footer h3,
 footer a, footer span { color: #FFFFFF !important; }
 .footer-links a { color: rgba(255,255,255,0.5) !important; }
 .footer-copy { color: rgba(255,255,255,0.3) !important; }
 
-/* TDG cards (Travex Mall, Finance) → BLACK text */
-.tdg-card h4, .tdg-card p, .tdg-card-label,
-.tdg-card-link, .tdg-card span { color: #111111 !important; }
+/* TDG card colours handled in style.css */
 
 
-.form-group input, .form-group textarea, .form-group select { color: #111827 !important; }
-.form-group label { color: #111827 !important; }
+.form-group input, .form-group textarea, .form-group select { color: #111827 !important; background: #FFFFFF !important; }
+.form-group label { color: var(--muted) !important; }
+/* submit button on dark bg — ensure visibility */
+#contact-main .btn-gold { background: #FFFFFF !important; color: #111827 !important; }
+#contact-main .btn-gold:hover { background: #F3F4F6 !important; }
 </style>
 </head>
 <body>
