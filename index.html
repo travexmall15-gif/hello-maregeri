@@ -51,21 +51,18 @@
   </script>
 <link rel="stylesheet" href="style.css"/>
 <style>
-/* ══════════════════════════════════════════
-   HERO — dark navy background "ya zamani"
-   All text WHITE on dark background
-══════════════════════════════════════════ */
+/* ══ HERO — light background, black fonts ══ */
 #hero {
   min-height: 100vh;
   display: flex; align-items: center;
   padding: 100px 5% 80px;
-  background: linear-gradient(135deg, #080A0F 0%, #0d1117 60%, #0a0d14 100%);
+  background: #FFFFFF;
   position: relative; overflow: hidden;
 }
 .hero-glow {
   position: absolute; top: -100px; right: 0;
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(139,37,0,0.12) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(139,37,0,0.05) 0%, transparent 65%);
   pointer-events: none;
 }
 .hero-inner {
@@ -74,15 +71,13 @@
   width: 100%; max-width: 1100px;
   position: relative; z-index: 1;
 }
-
-/* hero badge */
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 5px 14px; border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid #E5E7EB;
   font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; color: rgba(255,255,255,0.75);
-  background: rgba(255,255,255,0.06);
+  text-transform: uppercase; color: #374151;
+  background: #F9FAFB;
   margin-bottom: 20px;
 }
 .hero-badge::before {
@@ -91,56 +86,50 @@
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-/* hero headings — all white */
 .hero-left h1 {
   font-size: clamp(2.8rem, 5vw, 5rem);
   font-weight: 800; line-height: 1.0;
-  color: #FFFFFF; margin-bottom: 6px;
+  color: #111827; margin-bottom: 6px;
   letter-spacing: -0.01em;
 }
 .hero-left h1 span { color: #8B2500; }
 .hero-subtitle {
   font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; color: rgba(255,255,255,0.55);
+  text-transform: uppercase; color: #6B7280;
   margin-bottom: 20px;
 }
 .hero-desc {
-  font-size: 0.98rem; color: rgba(255,255,255,0.65);
+  font-size: 0.98rem; color: #374151;
   line-height: 1.8; max-width: 520px; margin-bottom: 32px;
 }
-
-/* hero buttons */
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
-#hero .btn-gold  { background: #8B2500; color: #FFFFFF; border: none; }
-#hero .btn-gold:hover { background: #6b1c00; }
-#hero .btn-outline { border-color: rgba(255,255,255,0.3); color: #FFFFFF; background: transparent; }
-#hero .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
+#hero .btn-gold { background: #111827; color: #FFFFFF; border: none; }
+#hero .btn-gold:hover { background: #1F2937; }
+#hero .btn-outline { border-color: #D1D5DB; color: #111827; background: transparent; }
+#hero .btn-outline:hover { border-color: #111827; }
 
-/* hero stats */
 .hero-stats {
   display: flex; gap: 32px;
   padding-top: 28px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid #E5E7EB;
 }
 .stat-n {
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.9rem; font-weight: 800;
-  color: #8B2500; line-height: 1;
+  color: #111827; line-height: 1;
 }
 .stat-l {
   font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 3px;
+  text-transform: uppercase; color: #6B7280; margin-top: 3px;
 }
-
-/* skill pills on dark bg */
 .hero-skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
 .skill-pill {
   padding: 5px 14px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;
   border-radius: 4px;
   font-size: 0.72rem; font-weight: 600;
-  color: rgba(255,255,255,0.75);
+  color: #374151;
   font-family: Georgia, serif;
   letter-spacing: 0.02em;
 }
@@ -150,15 +139,13 @@
 .photo-circle {
   width: 280px; height: 280px; border-radius: 50%;
   overflow: hidden;
-  border: 3px solid rgba(139,37,0,0.6);
-  box-shadow: 0 0 0 8px rgba(139,37,0,0.08), 0 20px 60px rgba(0,0,0,0.5);
+  border: 3px solid #E5E7EB;
+  box-shadow: 0 8px 40px rgba(17,24,39,0.1);
   flex-shrink: 0;
 }
 .photo-circle img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
-/* ══════════════════════════════════════════
-   TDG SECTION — dark bg, white text
-══════════════════════════════════════════ */
+/* ══ TDG — dark section ══ */
 #tdg { background: #111827; }
 .tdg-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .tdg-eyebrow {
@@ -166,39 +153,32 @@
   background: rgba(139,37,0,0.12); border: 1px solid rgba(139,37,0,0.3);
   border-radius: 6px; font-size: 0.68rem; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: #8B2500; margin-bottom: 14px;
+  color: #F87171; margin-bottom: 14px;
 }
-#tdg h2 { color: #FFFFFF; margin-bottom: 16px; }
-#tdg h2 span { color: #8B2500; }
+#tdg h2 { color: #FFFFFF !important; margin-bottom: 16px; }
+#tdg h2 span { color: #F87171 !important; }
 .tdg-text p { font-size: 0.94rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 14px; }
-
-/* TDG cards — LIGHT background, BLACK text */
 .tdg-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 6px; }
 .tdg-card {
   display: block; padding: 18px;
   background: #FFFFFF; border: 1px solid #E5E7EB;
-  border-radius: 12px; text-decoration: none;
-  transition: all 0.2s;
+  border-radius: 12px; text-decoration: none; transition: all 0.2s;
 }
 .tdg-card:hover { border-color: #8B2500; transform: translateY(-2px); }
-.tdg-card-label { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8B2500; margin-bottom: 4px; }
-.tdg-card h4 { font-family: 'Times New Roman', Times, serif; font-size: 0.95rem; font-weight: 700; color: #111827; margin-bottom: 5px; }
-.tdg-card p  { font-size: 0.76rem; color: #374151; line-height: 1.5; margin-bottom: 10px; }
-.tdg-card-link { font-size: 0.7rem; font-weight: 700; color: #8B2500; letter-spacing: 0.04em; }
-
-/* tdg screens */
+.tdg-card-label { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8B2500 !important; margin-bottom: 4px; }
+.tdg-card h4 { font-family: 'Times New Roman', Times, serif; font-size: 0.95rem; font-weight: 700; color: #111827 !important; margin-bottom: 5px; }
+.tdg-card p  { font-size: 0.76rem; color: #374151 !important; line-height: 1.5; margin-bottom: 10px; }
+.tdg-card-link { font-size: 0.7rem; font-weight: 700; color: #8B2500 !important; letter-spacing: 0.04em; }
 .tdg-screens { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.screen { border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: border-color 0.2s; }
-.screen:hover { border-color: rgba(255,255,255,0.25); }
+.screen { border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
 .screen img { width: 100%; display: block; object-fit: cover; }
 .screen.full { grid-column: 1 / -1; }
 
-/* ══════════════════════════════════════════
-   SERVICES — LIGHT bg, BLACK text
-══════════════════════════════════════════ */
+/* ══ SERVICES — light bg, black text ══ */
 #services { background: #FFFFFF; }
-#services h2, #services .label { color: #111827; }
-#services h2 span { color: #8B2500; }
+#services h2 { color: #111827 !important; }
+#services h2 span { color: #8B2500 !important; }
+#services .label { color: #6B7280 !important; }
 .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
 .svc {
   padding: 26px 22px;
@@ -208,12 +188,10 @@
 }
 .svc:hover { border-bottom-color: #8B2500; border-color: #D1D5DB; }
 .svc-icon { font-size: 1.8rem; margin-bottom: 14px; }
-.svc h3 { font-family: 'Times New Roman', Times, serif; font-size: 0.92rem; font-weight: 700; color: #111827; margin-bottom: 8px; letter-spacing: 0.02em; }
-.svc p   { font-size: 0.82rem; color: #374151; line-height: 1.6; }
+.svc h3 { font-family: 'Times New Roman', Times, serif; font-size: 0.92rem; font-weight: 700; color: #111827 !important; margin-bottom: 8px; }
+.svc p   { font-size: 0.82rem; color: #374151 !important; line-height: 1.6; }
 
-/* ══════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════ */
+/* ══ RESPONSIVE ══ */
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: 36px; }
   .hero-photo-side { order: -1; }
@@ -226,37 +204,21 @@
   .tdg-cards { grid-template-columns: 1fr; }
 }
 
-/* ══════════════════════════════════════════
-   OVERRIDES — ensure no colour conflicts
-══════════════════════════════════════════ */
-/* hero: everything white */
-#hero, #hero h1, #hero h2, #hero h3, #hero p,
-#hero .hero-subtitle, #hero .hero-desc, #hero .label { color: #FFFFFF; }
+/* ══ FINAL OVERRIDES ══ */
+/* hero — all black */
+#hero * { color: #111827 !important; }
 #hero h1 span { color: #8B2500 !important; }
-#hero .stat-n  { color: #8B2500 !important; }
-#hero .stat-l  { color: rgba(255,255,255,0.5) !important; }
-#hero .hero-badge, #hero .hero-desc, #hero .hero-subtitle { color: rgba(255,255,255,0.7) !important; }
-#hero .skill-pill { color: rgba(255,255,255,0.75) !important; }
-#hero .hero-stats { border-color: rgba(255,255,255,0.1) !important; }
+#hero .hero-badge { color: #374151 !important; }
+#hero .hero-subtitle, #hero .hero-desc, #hero .stat-l { color: #6B7280 !important; }
+#hero .skill-pill { color: #374151 !important; background: #F3F4F6 !important; border-color: #E5E7EB !important; }
+#hero .hero-stats { border-color: #E5E7EB !important; }
+#hero .btn-gold { color: #FFFFFF !important; background: #111827 !important; }
+#hero .btn-outline { color: #111827 !important; }
 
-/* services: everything black */
-#services *, #services h2, #services h3, #services p, #services .label { color: #111827 !important; }
-.svc p { color: #374151 !important; }
-
-/* tdg section heading */
-#tdg h2 { color: #FFFFFF !important; }
-#tdg h2 span { color: #8B2500 !important; }
-#tdg .label { color: rgba(255,255,255,0.5) !important; }
-.tdg-text p { color: rgba(255,255,255,0.7) !important; }
-
-/* tdg cards — black text on white */
-.tdg-card, .tdg-card * { color: #111827 !important; }
-.tdg-card-label, .tdg-card-link { color: #8B2500 !important; }
-
-/* footer */
-footer, footer *, footer a { color: #FFFFFF !important; }
+/* footer — white text on dark */
+footer, footer * { color: #FFFFFF !important; }
 .footer-links a { color: rgba(255,255,255,0.55) !important; }
-.footer-copy   { color: rgba(255,255,255,0.3) !important; }
+.footer-copy { color: rgba(255,255,255,0.3) !important; }
 </style>
 </head>
 <body>
