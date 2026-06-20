@@ -47,7 +47,7 @@
 /* Info side */
 .contact-info h3 {
   font-size: 1.5rem; letter-spacing: 0.04em;
-  color: #111827; margin-bottom: 24px;
+  color: var(--white); margin-bottom: 24px;
 }
 .contact-items { display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px; }
 .contact-item {
@@ -72,7 +72,7 @@
   color: var(--gold); margin-bottom: 3px;
 }
 .ci-value {
-  font-size: 0.9rem; color: #111827; font-weight: 500;
+  font-size: 0.9rem; color: var(--white); font-weight: 500;
 }
 
 .live-products { margin-top: 8px; }
@@ -93,7 +93,7 @@
 }
 .live-btn:hover { border-color: var(--gold); }
 .live-btn-name {
-  font-weight: 700; font-size: 0.9rem; color: #111827;
+  font-weight: 700; font-size: 0.9rem; color: var(--white);
 }
 .live-btn-url {
   font-size: 0.75rem; color: var(--gold);
@@ -104,7 +104,7 @@
 .contact-form-wrap { }
 .contact-form-wrap h3 {
   font-size: 1.5rem; letter-spacing: 0.04em;
-  color: #111827; margin-bottom: 24px;
+  color: var(--white); margin-bottom: 24px;
 }
 .form-group { margin-bottom: 18px; }
 .form-group label {
@@ -120,7 +120,7 @@
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px;
   font-family: Georgia, serif, sans-serif;
-  font-size: 0.9rem; color: #111827;
+  font-size: 0.9rem; color: var(--white);
   outline: none;
   transition: border-color 0.2s;
 }
@@ -139,6 +139,30 @@
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   .form-row { grid-template-columns: 1fr; }
 }
+
+/* ── TEXT FIX: dark bg sections → white text ── */
+#hero, #hero p, #hero h1, #hero h2, #hero h3, #hero span,
+#hero .hero-subtitle, #hero .hero-desc, #hero .hero-badge,
+#hero .stat-l, #hero .label, #hero .skill-pill { color: #FFFFFF !important; }
+#hero h1 span, #hero .stat-n { color: #FFFFFF !important; }
+#hero .hero-stats { border-color: rgba(255,255,255,0.15) !important; }
+
+#story-hero *, #story-hero h1, #story-hero p { color: #FFFFFF !important; }
+#proj-hero *, #proj-hero h1, #proj-hero p { color: #FFFFFF !important; }
+#contact-hero *, #contact-hero h1, #contact-hero p { color: #FFFFFF !important; }
+
+#services *, #services h2, #services h3, #services h4,
+#services p, #services .label, #services .svc p { color: #FFFFFF !important; }
+
+footer *, footer p, footer h1, footer h2, footer h3,
+footer a, footer span { color: #FFFFFF !important; }
+.footer-links a { color: rgba(255,255,255,0.5) !important; }
+.footer-copy { color: rgba(255,255,255,0.3) !important; }
+
+/* TDG cards (Travex Mall, Finance) → BLACK text */
+.tdg-card h4, .tdg-card p, .tdg-card-label,
+.tdg-card-link, .tdg-card span { color: #111111 !important; }
+
 </style>
 </head>
 <body>
