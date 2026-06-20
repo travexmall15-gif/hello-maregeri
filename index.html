@@ -2,8 +2,53 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+  <meta name="google-site-verification" content="p9ZmMHL9Vc2xALCBuGiLvE2m5e5ViBeyXmNs_aEo-oM" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Jumanne Maregeri — Portfolio</title>
+<title>Jumanne Maregeri — Landscape Architect, Developer & Founder | Dar es Salaam</title>
+  <meta name="description" content="Jumanne Maregeri is a Landscape Architect, Full-Stack Developer, Founder of Travex Digital Group and Magazine Author based in Dar es Salaam, Tanzania. Building digital products and designing spaces that shape East Africa's future."/>
+  <meta name="keywords" content="Jumanne Maregeri, Landscape Architect Tanzania, Full Stack Developer Tanzania, Travex Digital Group, Dar es Salaam architect, Tanzania developer, Hello Maregeri, architecture portfolio"/>
+  <meta name="author" content="Jumanne Maregeri"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://hello-maregeri.vercel.app/"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Jumanne Maregeri — Landscape Architect, Developer & Founder | Dar es Salaam"/>
+  <meta property="og:description" content="Jumanne Maregeri is a Landscape Architect, Full-Stack Developer, Founder of Travex Digital Group and Magazine Author based in Dar es Salaam, Tanzania. Building digital products and designing spaces that shape East Africa's future."/>
+  <meta property="og:url" content="https://hello-maregeri.vercel.app/"/>
+  <meta property="og:image" content="https://hello-maregeri.vercel.app/images/me.jpg"/>
+  <meta property="og:site_name" content="Hello Maregeri"/>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Jumanne Maregeri — Landscape Architect, Developer & Founder | Dar es Salaam"/>
+  <meta name="twitter:description" content="Jumanne Maregeri is a Landscape Architect, Full-Stack Developer, Founder of Travex Digital Group and Magazine Author based in Dar es Salaam, Tanzania. Building digital products and designing spaces that shape East Africa's future."/>
+  <meta name="twitter:image" content="https://hello-maregeri.vercel.app/images/me.jpg"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jumanne Maregeri",
+    "jobTitle": "Landscape Architect, Full-Stack Developer & Founder",
+    "url": "https://hello-maregeri.vercel.app",
+    "image": "https://hello-maregeri.vercel.app/images/me.jpg",
+    "email": "jmaregeri006@gmail.com",
+    "telephone": "+255651919915",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dar es Salaam",
+      "addressCountry": "TZ"
+    },
+    "sameAs": [
+      "https://travex-digital-group.vercel.app",
+      "https://travex-mall.vercel.app"
+    ],
+    "knowsAbout": ["Landscape Architecture", "Full-Stack Development", "Digital Products", "Magazine Publishing", "East Africa Tech"],
+    "founder": {
+      "@type": "Organization",
+      "name": "Travex Digital Group",
+      "url": "https://travex-digital-group.vercel.app"
+    }
+  }
+  </script>
 <link rel="stylesheet" href="style.css"/>
 <style>
 /* ── HERO ── */
@@ -17,7 +62,7 @@
   position: absolute;
   top: -100px; right: 0;
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(5,46,22,0.08) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(139,37,0,0.08) 0%, transparent 65%);
   pointer-events: none;
 }
 .hero-inner {
@@ -32,29 +77,29 @@
   padding: 5px 14px; border-radius: 20px;
   border: 1px solid var(--border);
   font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--green);
-  background: rgba(5,46,22,0.06);
+  text-transform: uppercase; color: var(--gold);
+  background: rgba(139,37,0,0.06);
   margin-bottom: 20px;
 }
 .hero-badge::before {
   content: ''; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--green); animation: blink 2s infinite;
+  background: var(--gold); animation: blink 2s infinite;
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
 .hero-left h1 {
   font-size: clamp(2.8rem, 5vw, 5rem);
   font-weight: 800; line-height: 1.0;
-  color: var(--white); margin-bottom: 6px;
+  color: #111827; margin-bottom: 6px;
   letter-spacing: -0.01em;
 }
-.hero-left h1 span { color: var(--green); }
+.hero-left h1 span { color: var(--gold); }
 .hero-subtitle {
   font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; color: #000000;
+  text-transform: uppercase; color: var(--muted);
   margin-bottom: 20px;
 }
 .hero-desc {
-  font-size: 0.98rem; color: #000000;
+  font-size: 0.98rem; color: var(--muted);
   line-height: 1.8; max-width: 520px; margin-bottom: 32px;
 }
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
@@ -64,22 +109,22 @@
   border-top: 1px solid var(--border2);
 }
 .stat-n {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 1.9rem; font-weight: 800;
-  color: var(--green); line-height: 1;
+  color: var(--gold); line-height: 1;
 }
 .stat-l {
   font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; color: #000000; margin-top: 3px;
+  text-transform: uppercase; color: var(--muted); margin-top: 3px;
 }
 
 /* PHOTO CIRCLE */
 .hero-photo-side { display: flex; align-items: center; justify-content: center; }
 .photo-circle {
-  width: 180px; height: 180px; border-radius: 50%;
+  width: 280px; height: 280px; border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--gold);
-  box-shadow: 0 0 0 8px rgba(5,46,22,0.08), 0 20px 60px rgba(0,0,0,0.4);
+  box-shadow: 0 0 0 8px rgba(139,37,0,0.08), 0 20px 60px rgba(0,0,0,0.4);
   flex-shrink: 0;
 }
 .photo-circle img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
@@ -92,14 +137,14 @@
 }
 .tdg-eyebrow {
   display: inline-block; padding: 4px 12px;
-  background: rgba(5,46,22,0.1); border: 1px solid var(--border);
+  background: rgba(139,37,0,0.1); border: 1px solid var(--border);
   border-radius: 6px; font-size: 0.68rem; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--green); margin-bottom: 14px;
+  color: var(--gold); margin-bottom: 14px;
 }
 .tdg-text h2 { margin-bottom: 16px; }
 .tdg-text p {
-  font-size: 0.94rem; color: #000000;
+  font-size: 0.94rem; color: var(--muted);
   line-height: 1.8; margin-bottom: 14px;
 }
 .tdg-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 6px; }
@@ -109,17 +154,17 @@
   border-radius: 12px; text-decoration: none;
   transition: all 0.2s;
 }
-.tdg-card:hover { border-color: var(--green); transform: translateY(-2px); }
+.tdg-card:hover { border-color: var(--gold); transform: translateY(-2px); }
 .tdg-card-label {
   font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--green); margin-bottom: 4px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
 }
 .tdg-card h4 {
-  font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700;
-  color: var(--white); margin-bottom: 5px;
+  font-family: 'Times New Roman', Times, serif; font-size: 0.95rem; font-weight: 700;
+  color: #FFFFFF; margin-bottom: 5px;
 }
-.tdg-card p { font-size: 0.76rem; color: #000000; line-height: 1.5; margin-bottom: 10px; }
-.tdg-card-link { font-size: 0.7rem; font-weight: 700; color: var(--green); letter-spacing: 0.04em; }
+.tdg-card p { font-size: 0.76rem; color: rgba(255,255,255,0.75); line-height: 1.5; margin-bottom: 10px; }
+.tdg-card-link { font-size: 0.7rem; font-weight: 700; color: var(--gold); letter-spacing: 0.04em; }
 
 /* screens */
 .tdg-screens { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -137,18 +182,18 @@
   border-radius: 14px; transition: all 0.25s;
   border-bottom: 2px solid transparent;
 }
-.svc:hover { border-bottom-color: var(--green); border-color: var(--border); }
+.svc:hover { border-bottom-color: var(--gold); border-color: var(--border); }
 .svc-icon { font-size: 1.8rem; margin-bottom: 14px; }
 .svc h3 {
-  font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 700;
-  color: var(--white); margin-bottom: 8px; letter-spacing: 0.02em;
+  font-family: 'Times New Roman', Times, serif; font-size: 0.92rem; font-weight: 700;
+  color: #111827; margin-bottom: 8px; letter-spacing: 0.02em;
 }
-.svc p { font-size: 0.82rem; color: #000000; line-height: 1.6; }
+.svc p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
 
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: 36px; }
   .hero-photo-side { order: -1; }
-  .photo-circle { width: 130px; height: 130px; }
+  .hero-photo-wrap { width: 280px; }
   .tdg-wrap { grid-template-columns: 1fr; gap: 36px; }
   .services-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -156,6 +201,21 @@
   .hero-stats { gap: 18px; }
   .services-grid { grid-template-columns: 1fr; }
   .tdg-cards { grid-template-columns: 1fr; }
+}
+
+.hero-skills {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 24px;
+}
+.skill-pill {
+  padding: 5px 14px;
+  background: rgba(139,37,0,0.12);
+  border: 1px solid rgba(139,37,0,0.3);
+  border-radius: 4px;
+  font-size: 0.72rem; font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  font-family: Georgia, serif;
+  letter-spacing: 0.02em;
 }
 </style>
 </head>
@@ -202,6 +262,14 @@
         <div><div class="stat-n">9+</div><div class="stat-l">Projects</div></div>
         <div><div class="stat-n">4</div><div class="stat-l">Magazines</div></div>
         <div><div class="stat-n">3</div><div class="stat-l">Ventures</div></div>
+      </div>
+      <div class="hero-skills">
+        <span class="skill-pill">🏗 Landscape Architecture</span>
+        <span class="skill-pill">💻 Full-Stack Dev</span>
+        <span class="skill-pill">🤖 AI & Automation</span>
+        <span class="skill-pill">📰 Magazine Author</span>
+        <span class="skill-pill">🎨 Graphic Design</span>
+        <span class="skill-pill">🌿 Sustainability</span>
       </div>
     </div>
     <div class="hero-photo-side reveal">
