@@ -142,9 +142,9 @@
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 14px;
 }
-.tdg-text h2 { margin-bottom: 16px; }
+.tdg-text h2 { margin-bottom: 16px; color: #FFFFFF !important; }
 .tdg-text p {
-  font-size: 0.94rem; color: var(--muted);
+  font-size: 0.94rem; color: rgba(255,255,255,0.75);
   line-height: 1.8; margin-bottom: 14px;
 }
 .tdg-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 6px; }
@@ -229,17 +229,18 @@
 #proj-hero *, #proj-hero h1, #proj-hero p { color: #FFFFFF !important; }
 #contact-hero *, #contact-hero h1, #contact-hero p { color: #FFFFFF !important; }
 
-#services *, #services h2, #services h3, #services h4,
-#services p, #services .label, #services .svc p { color: #FFFFFF !important; }
+/* #services has light background — dark text is correct */
+#services h2, #services h3 { color: var(--dark) !important; }
+#services p, #services .svc p, #services .label { color: var(--text2) !important; }
 
 footer *, footer p, footer h1, footer h2, footer h3,
 footer a, footer span { color: #FFFFFF !important; }
 .footer-links a { color: rgba(255,255,255,0.5) !important; }
 .footer-copy { color: rgba(255,255,255,0.3) !important; }
 
-/* TDG cards (Travex Mall, Finance) → BLACK text */
+/* TDG cards (Travex Mall, Finance) → dark text on light card */
 .tdg-card h4, .tdg-card p, .tdg-card-label,
-.tdg-card-link, .tdg-card span { color: #111111 !important; }
+.tdg-card-link, .tdg-card span { color: var(--dark) !important; }
 
 
 /* Hero — white text on dark bg */
@@ -248,7 +249,7 @@ footer a, footer span { color: #FFFFFF !important; }
 .hero-stats { border-top-color: rgba(255,255,255,0.1) !important; }
 .skill-pill { color: rgba(255,255,255,0.8) !important; background: rgba(255,255,255,0.08) !important; border-color: rgba(255,255,255,0.15) !important; }
 /* TDG cards — dark text on light bg */
-.tdg-card h4, .tdg-card p, .tdg-card-label, .tdg-card-link { color: #111827 !important; }
+.tdg-card h4, .tdg-card p, .tdg-card-label, .tdg-card-link { color: var(--dark) !important; }
 </style>
 </head>
 <body>
