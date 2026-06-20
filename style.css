@@ -412,28 +412,103 @@ footer, footer p, footer a, footer .footer-copy { color: rgba(255,255,255,0.5) !
 footer .footer-logo { color: #FFFFFF !important; }
 footer .footer-links a:hover { color: #FFFFFF !important; }
 
-/* ── GLOBAL: white bg = black text, green titles ── */
-section p, section li, section span:not(.label):not(.skill-pill),
-.card p, .card li, .card-body p,
+
+/* ═══════════════════════════════════════════════
+   GLOBAL FINAL RULE: ALL TEXT ON WHITE BG = BLACK
+   Titles on white = darkest green #052E16
+   Hero/dark sections = white (untouched)
+═══════════════════════════════════════════════ */
+
+/* Reset all text to black on white sections */
+body { color: #000000; }
+
+p, span, li, a:not(.btn-gold):not(.btn-outline):not(.nav-logo):not(.modal-link),
+label, td, th, small, strong, em, b, i { color: #000000; }
+
+/* Titles = darkest green */
+h1, h2, h3, h4, h5, h6 { color: #052E16; }
+
+/* Nav links */
+.nav-links a { color: #000000; }
+.nav-links a:hover, .nav-links a.active { color: #052E16; }
+.mobile-menu a { color: #000000; }
+.mobile-menu a:hover { color: #052E16; }
+
+/* Card text */
+.card p, .card li, .card span,
+.card-body p, .card-body li,
 .proj-card-body p, .mag-body p,
-.svc p, .about-text p, .timeline-body, .timeline-body p,
-.story-content p, .vm-card p, .value p { 
-  color: #000000 !important; 
-}
-section h1, section h2, section h3, section h4,
-.card h3, .card-body h3, .proj-card-body h3, .mag-body h3 {
-  color: #052E16 !important;
-}
+.proj-cat, .card-cat { color: #000000; }
 
-/* Hero overrides — dark green bg, everything white */
-#hero *, #hero p, #hero h1, #hero h2, #hero h3, #hero span,
-#hero .hero-subtitle, #hero .hero-desc, #hero .stat-l {
-  color: #FFFFFF !important;
-}
-#hero h1 span, #hero .stat-n, #hero .hero-badge { 
-  color: #FBBF24 !important; 
-}
-#hero .hero-badge::before { background: #FBBF24 !important; }
+.card-body h3, .proj-card-body h3,
+.mag-body h3 { color: #052E16; }
 
-/* Vision text specifically */
-.hero-subtitle { color: #FFFFFF !important; }
+/* Story, About, Timeline */
+.story-content p, .story-content li, .story-content span,
+.about-text p, .timeline-body, .timeline-date,
+.exp-body p, .exp-body li { color: #000000; }
+.exp-title, .section-title { color: #052E16; }
+
+/* Services, Values, Skills */
+.svc p, .svc li, .value p, .vm-card p,
+.skill-list li, .about-desc { color: #000000; }
+.svc h4, .value h4, .vm-card h4 { color: #052E16; }
+
+/* Labels on white bg */
+.label { color: #052E16; }
+
+/* Tags */
+.tag { color: #000000; }
+
+/* Project cards */
+.proj-open { color: #052E16; }
+
+/* Muted text = dark gray, not gray on white */
+.muted, [class*="muted"] { color: #333333; }
+
+/* ── DARK GREEN BG SECTIONS — override back to white ── */
+#hero, #hero *,
+footer, footer *,
+#proj-hero, #proj-hero *,
+#story-hero, #story-hero *,
+#contact-hero, #contact-hero *,
+#services, #services *,
+.dark-section, .dark-section *,
+.modal-overlay, .modal-overlay *,
+.modal-box * { color: #FFFFFF; }
+
+/* Yellow for titles/accents on dark sections */
+#hero h1, #hero .stat-n { color: #FBBF24 !important; }
+#hero h1 span { color: #FBBF24 !important; }
+#hero .hero-badge { color: #FFFFFF !important; }
+#hero .hero-subtitle { color: #FFFFFF !important; }
+#hero .hero-desc { color: #FFFFFF !important; }
+#hero .skill-pill { color: rgba(255,255,255,0.85) !important; }
+#hero .stat-l { color: rgba(255,255,255,0.65) !important; }
+
+footer .footer-logo { color: #FFFFFF !important; }
+footer .footer-links a { color: rgba(255,255,255,0.5) !important; }
+footer .footer-copy { color: rgba(255,255,255,0.25) !important; }
+
+#services h2 { color: #FBBF24 !important; }
+#services h2 span { color: #FFFFFF !important; }
+#services .label { color: rgba(255,255,255,0.6) !important; }
+#services .svc h4 { color: #FFFFFF !important; }
+#services .svc p { color: rgba(255,255,255,0.8) !important; }
+
+#proj-hero h1, #story-hero h1, #contact-hero h1 { color: #FBBF24 !important; }
+#proj-hero p, #story-hero p, #contact-hero p { color: rgba(255,255,255,0.8) !important; }
+#proj-hero .label, #story-hero .label, #contact-hero .label { color: rgba(255,255,255,0.6) !important; }
+
+/* Modal */
+.modal-title { color: #FFFFFF !important; }
+.modal-cat { color: #FBBF24 !important; }
+.modal-desc { color: rgba(255,255,255,0.85) !important; }
+.modal-close { color: #FFFFFF !important; }
+.modal-gallery-label { color: rgba(255,255,255,0.5) !important; }
+
+/* Buttons stay their colors */
+.btn-gold { color: #FFFFFF !important; }
+.btn-outline { color: #052E16 !important; }
+.tab-btn.active { color: #FFFFFF !important; }
+.tab-btn:not(.active) { color: #000000 !important; }
