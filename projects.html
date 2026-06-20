@@ -264,7 +264,7 @@ const P = {
 
 function openModal(id){
   const p=P[id]; if(!p) return;
-  let h=`<div class="modal-cat">${p.cat}</div><h2 class="modal-title">${p.title}</h2>`;
+  let h=`<div class="modal-cat" style="color:#FBBF24">${p.cat}</div><h2 class="modal-title">${p.title}</h2>`;
   if(p.hero) h+=`<img src="${p.hero}" class="modal-hero-img" alt="${p.title}"/>`;
   h+=`<p class="modal-desc">${p.desc}</p>`;
   h+=`<div class="modal-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join(' ')}</div>`;
