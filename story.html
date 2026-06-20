@@ -118,6 +118,16 @@
   .values-grid { grid-template-columns: 1fr; }
 }
 
+/* story-specific fixes */
+.story-content p strong { color: var(--dark) !important; }
+.story-quote p { color: var(--dark) !important; }
+.story-quote cite { color: var(--accent, #C2410C) !important; }
+#vision .vm-card h3 { color: var(--dark) !important; }
+#vision h2 { color: #FFFFFF !important; }
+#vision .label { color: rgba(255,255,255,0.6) !important; }
+#vision .vm-card p { color: var(--muted) !important; }
+.value h4 { color: var(--dark) !important; font-size: 0.82rem; }
+
 /* ── TEXT FIX: dark bg sections → white text ── */
 #hero, #hero p, #hero h1, #hero h2, #hero h3, #hero span,
 #hero .hero-subtitle, #hero .hero-desc, #hero .hero-badge,
@@ -129,17 +139,14 @@
 #proj-hero *, #proj-hero h1, #proj-hero p { color: #FFFFFF !important; }
 #contact-hero *, #contact-hero h1, #contact-hero p { color: #FFFFFF !important; }
 
-#services *, #services h2, #services h3, #services h4,
-#services p, #services .label, #services .svc p { color: #FFFFFF !important; }
+/* no #services section on this page */
 
 footer *, footer p, footer h1, footer h2, footer h3,
 footer a, footer span { color: #FFFFFF !important; }
 .footer-links a { color: rgba(255,255,255,0.5) !important; }
 .footer-copy { color: rgba(255,255,255,0.3) !important; }
 
-/* TDG cards (Travex Mall, Finance) → BLACK text */
-.tdg-card h4, .tdg-card p, .tdg-card-label,
-.tdg-card-link, .tdg-card span { color: #111111 !important; }
+/* TDG card colours handled in style.css */
 
 </style>
 </head>
