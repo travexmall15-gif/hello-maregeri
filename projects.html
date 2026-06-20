@@ -2,8 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+  <meta name="google-site-verification" content="p9ZmMHL9Vc2xALCBuGiLvE2m5e5ViBeyXmNs_aEo-oM" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Projects — Jumanne Maregeri</title>
+<title>Projects — Jumanne Maregeri | Architecture, Digital & Publishing</title>
+  <meta name="description" content="Portfolio of Jumanne Maregeri — featuring architectural renders (football stadium, Islamic center, hotel), digital products (Travex Mall, Travex Finance) and magazine publications."/>
+  <meta name="keywords" content="Jumanne Maregeri projects, Tanzania architecture portfolio, football stadium design, Islamic center design, Travex Mall, Travex Finance, magazine author Tanzania"/>
+  <meta name="author" content="Jumanne Maregeri"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://hello-maregeri.vercel.app/projects.html"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Projects — Jumanne Maregeri | Architecture, Digital & Publishing"/>
+  <meta property="og:description" content="Portfolio of Jumanne Maregeri — featuring architectural renders (football stadium, Islamic center, hotel), digital products (Travex Mall, Travex Finance) and magazine publications."/>
+  <meta property="og:url" content="https://hello-maregeri.vercel.app/projects.html"/>
+  <meta property="og:image" content="https://hello-maregeri.vercel.app/images/stadium4.png"/>
+  <meta property="og:site_name" content="Hello Maregeri"/>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Projects — Jumanne Maregeri | Architecture, Digital & Publishing"/>
+  <meta name="twitter:description" content="Portfolio of Jumanne Maregeri — featuring architectural renders (football stadium, Islamic center, hotel), digital products (Travex Mall, Travex Finance) and magazine publications."/>
+  <meta name="twitter:image" content="https://hello-maregeri.vercel.app/images/stadium4.png"/>
 <link rel="stylesheet" href="style.css"/>
 <style>
 #proj-hero {
@@ -14,12 +32,12 @@
 .proj-glow {
   position: absolute; top: -60px; right: 5%;
   width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(5,46,22,0.07) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(139,37,0,0.07) 0%, transparent 65%);
   pointer-events: none;
 }
 .proj-hero-content h1 { font-size: clamp(3rem,7vw,5.5rem); font-weight: 800; line-height: 0.95; }
-.proj-hero-content h1 span { color: var(--green); }
-.proj-hero-content p { font-size: 0.95rem; color: #000000; margin-top: 14px; max-width: 480px; line-height: 1.6; }
+.proj-hero-content h1 span { color: var(--gold); }
+.proj-hero-content p { font-size: 0.95rem; color: var(--muted); margin-top: 14px; max-width: 480px; line-height: 1.6; }
 #projects-main { background: var(--bg); padding-top: 56px; }
 .tabs {
   display: flex; gap: 4px; background: var(--card);
@@ -28,12 +46,12 @@
 }
 .tab-btn {
   padding: 9px 22px; background: transparent; border: none; border-radius: 8px;
-  font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase; color: #000000;
+  font-family: Georgia, serif, sans-serif; font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
   cursor: pointer; transition: all 0.2s;
 }
-.tab-btn.active { background: var(--green); color: var(--bg); }
-.tab-btn:hover:not(.active) { color: var(--white); }
+.tab-btn.active { background: var(--gold); color: var(--bg); }
+.tab-btn:hover:not(.active) { color: #111827; }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 .proj-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
@@ -47,42 +65,42 @@
 .proj-card-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; transition: transform 0.4s; }
 .proj-card:hover .proj-card-img { transform: scale(1.04); }
 .proj-card-body { padding: 18px 20px; }
-.proj-cat { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 6px; }
-.proj-card-body h3 { font-family: 'DM Sans', sans-serif,sans-serif; font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 7px; line-height: 1.2; }
-.proj-card-body p { font-size: 0.8rem; color: #000000; line-height: 1.6; margin-bottom: 12px; }
-.proj-open { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; color: var(--green); letter-spacing: 0.06em; text-transform: uppercase; }
+.proj-cat { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.proj-card-body h3 { font-family: 'Times New Roman', Times, serif,sans-serif; font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 7px; line-height: 1.2; }
+.proj-card-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+.proj-open { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; }
 .mag-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
 .mag-card { background: var(--card); border: 1px solid var(--border2); border-radius: 14px; overflow: hidden; cursor: pointer; transition: transform 0.25s, border-color 0.25s; }
 .mag-card:hover { transform: translateY(-4px); border-color: var(--border); }
 .mag-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
 .mag-body { padding: 14px 16px; }
-.mag-body h3 { font-family: 'DM Sans', sans-serif,sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 3px; }
-.mag-body p { font-size: 0.76rem; color: #000000; }
+.mag-body h3 { font-family: 'Times New Roman', Times, serif,sans-serif; font-size: 0.9rem; font-weight: 700; color: #111827; margin-bottom: 3px; }
+.mag-body p { font-size: 0.76rem; color: var(--muted); }
 /* MODAL */
 .modal-overlay {
   display: none; position: fixed; inset: 0; z-index: 9999;
-  background: rgba(5,46,22,0.97); backdrop-filter: blur(14px); overflow-y: auto;
+  background: rgba(4,8,16,0.97); backdrop-filter: blur(14px); overflow-y: auto;
 }
 .modal-overlay.open { display: block; }
 .modal-box { max-width: 900px; margin: 60px auto; padding: 0 20px 60px; }
 .modal-close {
   position: fixed; top: 20px; right: 24px; width: 42px; height: 42px; border-radius: 50%;
-  background: var(--card); border: 1px solid var(--border); color: var(--white);
+  background: var(--card); border: 1px solid var(--border); color: #111827;
   font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
   transition: all 0.2s; z-index: 10000;
 }
-.modal-close:hover { background: var(--green); color: var(--bg); }
-.modal-cat { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
-.modal-title { font-family: 'DM Sans', sans-serif,sans-serif; font-size: clamp(1.6rem,4vw,2.4rem); font-weight: 800; color: var(--white); margin-bottom: 22px; line-height: 1.1; }
+.modal-close:hover { background: var(--gold); color: var(--bg); }
+.modal-cat { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.modal-title { font-family: 'Times New Roman', Times, serif,sans-serif; font-size: clamp(1.6rem,4vw,2.4rem); font-weight: 800; color: #111827; margin-bottom: 22px; line-height: 1.1; }
 .modal-hero-img { width: 100%; max-height: 460px; object-fit: cover; border-radius: 14px; margin-bottom: 28px; border: 1px solid var(--border2); }
-.modal-desc { font-size: 0.95rem; color: #000000; line-height: 1.9; margin-bottom: 24px; max-width: 740px; }
+.modal-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.9; margin-bottom: 24px; max-width: 740px; }
 .modal-tags { margin-bottom: 28px; }
 .modal-divider { height: 1px; background: var(--border2); margin: 28px 0; }
-.modal-gallery-label { font-family: 'DM Sans', sans-serif,sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #000000; margin-bottom: 14px; }
+.modal-gallery-label { font-family: 'Times New Roman', Times, serif,sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
 .modal-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .modal-gallery img { width: 100%; border-radius: 10px; object-fit: cover; aspect-ratio: 16/10; display: block; border: 1px solid var(--border2); cursor: zoom-in; transition: transform 0.2s; }
 .modal-gallery img:hover { transform: scale(1.02); }
-.modal-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--green); color: var(--bg); font-family: 'Inter',sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 8px; margin-top: 6px; transition: background 0.2s; }
+.modal-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--gold); color: var(--bg); font-family: Georgia, serif,sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 8px; margin-top: 6px; transition: background 0.2s; }
 .modal-link:hover { background: var(--gold2); }
 @media (max-width: 900px) { .proj-grid { grid-template-columns: 1fr 1fr; } .mag-grid { grid-template-columns: 1fr 1fr; } .modal-gallery { grid-template-columns: 1fr; } }
 @media (max-width: 580px) { .proj-grid { grid-template-columns: 1fr; } .tab-btn { padding: 8px 14px; font-size: 0.72rem; } }
@@ -122,7 +140,7 @@
   <div class="tab-panel active" id="tab-architecture">
     <div class="proj-grid">
       <div class="proj-card" onclick="openModal('stadium')">
-        <div class="proj-img-wrap"><img src="images/stadium4.png" class="proj-card-img" alt="Stadium"/></div>
+        <div class="proj-img-wrap"><img src="images/stadium_c.png" class="proj-card-img" alt="Football Stadium"/></div>
         <div class="proj-card-body">
           <div class="proj-cat">Sports Facility · Most Proud Project</div>
           <h3>Football Stadium</h3>
@@ -131,7 +149,7 @@
         </div>
       </div>
       <div class="proj-card" onclick="openModal('mosque')">
-        <div class="proj-img-wrap"><img src="images/mosque2.png" class="proj-card-img" alt="Mosque"/></div>
+        <div class="proj-img-wrap"><img src="images/mosque_closeup.png" class="proj-card-img" alt="Islamic Center"/></div>
         <div class="proj-card-body">
           <div class="proj-cat">Civic & Religious Architecture</div>
           <h3>Islamic Center</h3>
@@ -192,8 +210,8 @@
       <div class="proj-card" onclick="openModal('efvs')">
         <div class="proj-img-wrap" style="background:var(--card2);display:flex;align-items:center;justify-content:center;aspect-ratio:16/10">
           <div style="text-align:center;padding:30px">
-            <div style="font-family:'DM Sans', sans-serif,sans-serif;font-size:2.5rem;font-weight:800;color:var(--green)">EFVS</div>
-            <div style="font-size:0.8rem;color:#000000;margin-top:6px">Tax Intelligence System</div>
+            <div style="font-family:'Times New Roman', Times, serif,sans-serif;font-size:2.5rem;font-weight:800;color:var(--gold)">EFVS</div>
+            <div style="font-size:0.8rem;color:var(--muted);margin-top:6px">Tax Intelligence System</div>
           </div>
         </div>
         <div class="proj-card-body">
@@ -248,11 +266,11 @@
 
 <script>
 const P = {
-  stadium:{cat:'Sports Facility · Most Proud Project',title:'Football Stadium Design',hero:'images/stadium4.png',desc:'A large-scale football stadium designed from the ground up using Live Home 3D. The project encompasses the full stadium bowl with tiered spectator stands, natural grass pitch layout, main entrance facade, press box, team facilities and VIP areas. The surrounding site includes structured parking, palm-lined access roads, pedestrian walkways, green buffer zones and landscape elements integrating the stadium into its broader urban context. This project represents my most ambitious and proudest architectural work.',tags:['Live Home 3D','Sports Facility','Site Planning','Landscape Architecture','Large Scale'],gallery:['images/stadium3.png','images/stadium5.png','images/stadium1.png','images/stadium2.png']},
-  mosque:{cat:'Civic & Religious Architecture',title:'Islamic Center',hero:'images/mosque2.png',desc:'A complete Islamic center complex featuring a central mosque with a grand blue dome and four minarets, flanked by madrasa buildings and ancillary community facilities. The design draws from classical Islamic architectural principles — arched colonnades, symmetrical composition, courtyard planning and ornamental detail. The surrounding landscape includes formal garden zones, palm planting, paved paths and dedicated parking. The project involved site planning, orientation studies, spatial flow analysis and full 3D rendering.',tags:['Live Home 3D','Mosque Design','Civic Architecture','Courtyard Planning','Site Planning'],gallery:['images/mosque1.png']},
+  stadium:{cat:'Sports Facility · Most Proud Project',title:'Football Stadium Design',hero:'images/stadium_c.png',desc:'A large-scale football stadium designed from the ground up using Live Home 3D. The project encompasses the full stadium bowl with tiered spectator stands, natural grass pitch layout, main entrance facade, press box, team facilities and VIP areas. The surrounding site includes structured parking, palm-lined access roads, pedestrian walkways, green buffer zones and landscape elements integrating the stadium into its broader urban context. This project represents my most ambitious and proudest architectural work.',tags:['Live Home 3D','Sports Facility','Site Planning','Landscape Architecture','Large Scale'],gallery:['images/stadium_a.png','images/stadium_b.png']},
+  mosque:{cat:'Civic & Religious Architecture',title:'Islamic Center',hero:'images/mosque_closeup.png',desc:'A complete Islamic center complex featuring a central mosque with a grand blue dome and four minarets, flanked by madrasa buildings and ancillary community facilities. The design draws from classical Islamic architectural principles — arched colonnades, symmetrical composition, courtyard planning and ornamental detail. The surrounding landscape includes formal garden zones, palm planting, paved paths and dedicated parking. The project involved site planning, orientation studies, spatial flow analysis and full 3D rendering.',tags:['Live Home 3D','Mosque Design','Civic Architecture','Courtyard Planning','Site Planning'],gallery:['images/mosque_aerial.png']},
   bungalow:{cat:'Residential · Makongo, Dar es Salaam',title:'Luxurious Bungalow',hero:'images/bungalow1.jpg',desc:'A luxury residential bungalow designed for a site in the Makongo area of Dar es Salaam. The design integrates the home seamlessly with its landscape — featuring a swimming pool, tropical garden beds, sculpted lawn areas, outdoor deck, boundary walls and feature lighting. The architecture adopts a contemporary flat-roof aesthetic with stone cladding details, large glass openings and a recessed entrance porch. Multiple views were rendered communicating the design from arrival through to the garden and pool area.',tags:['Residential','Luxury Design','Pool Landscape','Live Home 3D','Dar es Salaam'],gallery:['images/bungalow2.jpg','images/bungalow3.jpg','images/bungalow4.jpg','images/bungalow5.jpg']},
   commercial:{cat:'Commercial · Urban Landscape Design',title:'SS Centre — Commercial Complex',hero:'images/commercial1.jpg',desc:'Urban landscape design for the SS Centre Home City commercial complex — a large-scale retail development. The design addresses pedestrian arrival experience, outdoor seating and dining terraces, palm-lined parking access, stone paving patterns, topiary hedging and green planting buffers that soften the glass facade. Multiple perspectives were produced including aerial overview and pedestrian-level views showing the quality of materials and planting.',tags:['Commercial Landscape','Urban Design','Live Home 3D','Retail','Site Planning'],gallery:['images/commercial2.png']},
-  hotel:{cat:'Hospitality · Luxury Hotel',title:'Luxurious Hotel Design',hero:'images/hotel1.png',desc:'A multi-storey luxury hotel featuring a striking cylindrical glass tower as the central architectural form. The site is comprehensively planned with hotel facilities, a swimming pool area, outdoor lounge terrace, structured parking with tensile canopy structures, tropical planting throughout and curved road access. The landscape integrates circular themed garden beds, umbrella canopies over outdoor seating and layered planting that creates a resort-like ambiance.',tags:['Hospitality','Luxury Hotel','Site Planning','Landscape Architecture','Live Home 3D'],gallery:['images/hotel2.png']},
+  hotel:{cat:'Hospitality · Luxury Hotel',title:'Luxurious Hotel Design',hero:'images/hotel1.png',desc:'A multi-storey luxury hotel featuring a striking cylindrical glass tower as the central architectural form. The site is comprehensively planned with hotel facilities, a swimming pool area, outdoor lounge terrace, structured parking with tensile canopy structures, tropical planting throughout and curved road access. The landscape integrates circular themed garden beds, umbrella canopies over outdoor seating and layered planting that creates a resort-like ambiance.',tags:['Hospitality','Luxury Hotel','Site Planning','Landscape Architecture','Live Home 3D'],gallery:['images/hotel2.png','images/hotel3.png','images/hotel4.png']},
   travexmall:{cat:'E-Commerce Marketplace · Live Platform',title:'Travex Mall',hero:'images/travex_mall1.png',desc:"Travex Mall is Tanzania's most advanced digital marketplace — built with AI at its core. It features multi-tier seller dashboards (Basic, Standard & Premium), AI-powered business tools, WhatsApp ordering integration, Travex Campus for university entrepreneurs, and Travex Social Vybe — Africa's first business social network. Built with Next.js 16, TypeScript, Supabase and deployed on Vercel.",tags:['Next.js 16','TypeScript','Supabase','Vercel','PWA','AI Tools'],gallery:['images/travex_mall2.png'],link:'https://travex-mall.vercel.app'},
   travexfinance:{cat:'Financial Management SaaS · Live Platform',title:'Travex Finance',hero:'images/travex_finance.png',desc:'Travex Finance is a modern financial management system for Tanzanian retail businesses — built in Kiswahili for the local market. It allows business owners to record daily sales, manage stock levels, track customer debts and monitor monthly profits — all from one clean dashboard. Built with Next.js, Supabase and TypeScript.',tags:['SaaS','Next.js','Supabase','TypeScript','Kiswahili UI'],gallery:[],link:'https://travex-finance.vercel.app'},
   efvs:{cat:'GovTech / TaxTech · TRA Innovation 2026',title:'Economic Footprint Verification System',hero:null,desc:'EFVS is a cross-sector tax intelligence system designed for the Tanzania Revenue Authority. The system cross-references taxpayer declarations against TANESCO, DAWASCO, mobile money platforms, NSSF social security records and TANCIS customs data — building a comprehensive economic footprint for each taxpayer. Discrepancies between declared income and actual economic activity trigger compliance review alerts.',tags:['GovTech','Tax Intelligence','Data Analytics','Product Strategy','TRA Tanzania'],gallery:[]},
@@ -264,7 +282,7 @@ const P = {
 
 function openModal(id){
   const p=P[id]; if(!p) return;
-  let h=`<div class="modal-cat" style="color:#FBBF24">${p.cat}</div><h2 class="modal-title">${p.title}</h2>`;
+  let h=`<div class="modal-cat">${p.cat}</div><h2 class="modal-title">${p.title}</h2>`;
   if(p.hero) h+=`<img src="${p.hero}" class="modal-hero-img" alt="${p.title}"/>`;
   h+=`<p class="modal-desc">${p.desc}</p>`;
   h+=`<div class="modal-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join(' ')}</div>`;
