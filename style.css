@@ -25,6 +25,8 @@
   /* Keep for compatibility */
   --black:   #111827;
   --navy:    #1F2937;
+  --gray:    #6B7280;
+  --accent:  #C2410C;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -97,7 +99,7 @@ nav {
 .btn-gold {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 0.85rem 2rem;
-  background: var(--dark); color: #111827;
+  background: var(--dark); color: #FFFFFF;
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem; font-weight: 600;
   letter-spacing: -0.01em;
@@ -189,7 +191,7 @@ footer {
 .footer-logo {
   font-family: 'Outfit', sans-serif;
   font-size: 1.1rem; font-weight: 800;
-  letter-spacing: -0.01em; color: #111827; margin-bottom: 6px;
+  letter-spacing: -0.01em; color: #FFFFFF; margin-bottom: 6px;
 }
 .footer-logo span { color: rgba(255,255,255,0.5); }
 .footer-links {
@@ -288,9 +290,9 @@ footer h1, footer h2, footer h3 { color: #FFFFFF; }
 
 /* TDG cards dark bg */
 .tdg-card, .tdg-card * { color: #FFFFFF; }
-.tdg-card { background: #1a1a2e; border-color: rgba(255,255,255,0.1); }
-.tdg-card h4 { color: #FFFFFF; }
-.tdg-card p { color: rgba(255,255,255,0.8); }
+.tdg-card { background: var(--card2); border-color: var(--border2); }
+.tdg-card h4 { color: var(--dark); }
+.tdg-card p { color: var(--text2); }
 .tdg-card-label, .tdg-card-link { color: #FBBF24; }
 
 /* Header bars in dark sections */
