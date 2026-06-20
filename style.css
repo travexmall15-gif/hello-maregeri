@@ -230,3 +230,46 @@ p { text-align: justify; text-justify: inter-word; }
 @media (max-width: 900px) { .proj-grid { grid-template-columns: 1fr 1fr; } .mag-grid { grid-template-columns: 1fr 1fr; } .modal-gallery { grid-template-columns: 1fr; } }
 @media (max-width: 768px) { nav { padding: 0 4%; } .nav-links { display: none; } .hamburger { display: flex; } section { padding: 72px 4%; } .photo-circle { width: 200px; height: 200px; } }
 @media (max-width: 580px) { .proj-grid { grid-template-columns: 1fr; } .tab-btn { padding: 8px 14px; font-size: 0.72rem; } }
+
+
+/* ════════════════════════════════════════
+   TEXT COLORS ONLY — DO NOT TOUCH UI
+   White bg: text=black, titles=dark green
+   Green bg: text=white, titles=yellow
+════════════════════════════════════════ */
+
+/* WHITE BACKGROUND — all text black */
+p, li, span, a, td, small, strong, em,
+.card-body p, .proj-card-body p, .mag-body p,
+.label, .card-cat, .proj-cat, .tag,
+.hero-desc, .hero-subtitle, .stat-l,
+.muted, [class*="text"], .footer-copy { color: #000000; }
+
+/* WHITE BACKGROUND — titles dark green */
+h1, h2, h3, h4, h5, h6,
+.card-body h3, .proj-card-body h3, .mag-body h3 { color: #052E16; }
+
+/* GREEN BACKGROUND — all text white */
+#hero p, #hero span, #hero li, #hero a,
+#hero .hero-desc, #hero .hero-subtitle, #hero .stat-l, #hero .label,
+#hero .skill-pill, #hero .hero-badge,
+#story-hero p, #story-hero span, #story-hero .label,
+#proj-hero p, #proj-hero span, #proj-hero .label,
+#contact-hero p, #contact-hero span, #contact-hero .label,
+#services p, #services span, #services li, #services .label,
+#services .svc p,
+footer p, footer span, footer li, footer a, footer .footer-copy,
+.modal-desc, .modal-overlay p, .modal-overlay span,
+.modal-overlay li, .modal-gallery-label { color: #FFFFFF; }
+
+/* GREEN BACKGROUND — titles yellow */
+#hero h1, #hero h2, #hero h3, #hero h1 span, #hero .stat-n,
+#story-hero h1, #proj-hero h1, #contact-hero h1,
+#services h2, #services h3, #services h4,
+.modal-title, .modal-cat,
+footer h1, footer h2, footer h3 { color: #FBBF24; }
+
+/* Buttons keep their colors */
+.btn-gold, .btn-gold * { color: #FFFFFF; }
+.tab-btn.active, .tab-btn.active * { color: #FFFFFF; }
+.modal-link, .modal-link * { color: #052E16; }
