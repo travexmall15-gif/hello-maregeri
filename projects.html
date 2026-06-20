@@ -50,7 +50,7 @@
   letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
   cursor: pointer; transition: all 0.2s;
 }
-.tab-btn.active { background: var(--gold); color: var(--bg); }
+.tab-btn.active { background: var(--dark); color: #FFFFFF; }
 .tab-btn:hover:not(.active) { color: var(--white); }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
@@ -66,7 +66,7 @@
 .proj-card:hover .proj-card-img { transform: scale(1.04); }
 .proj-card-body { padding: 18px 20px; }
 .proj-cat { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
-.proj-card-body h3 { font-family: 'Times New Roman', Times, serif,sans-serif; font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 7px; line-height: 1.2; }
+.proj-card-body h3 { font-family: 'Times New Roman', Times, serif,sans-serif; font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 7px; line-height: 1.2; }
 .proj-card-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
 .proj-open { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; }
 .mag-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
@@ -74,7 +74,7 @@
 .mag-card:hover { transform: translateY(-4px); border-color: var(--border); }
 .mag-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
 .mag-body { padding: 14px 16px; }
-.mag-body h3 { font-family: 'Times New Roman', Times, serif,sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+.mag-body h3 { font-family: 'Times New Roman', Times, serif,sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
 .mag-body p { font-size: 0.76rem; color: var(--muted); }
 /* MODAL */
 .modal-overlay {
@@ -116,17 +116,14 @@
 #proj-hero *, #proj-hero h1, #proj-hero p { color: #FFFFFF !important; }
 #contact-hero *, #contact-hero h1, #contact-hero p { color: #FFFFFF !important; }
 
-#services *, #services h2, #services h3, #services h4,
-#services p, #services .label, #services .svc p { color: #FFFFFF !important; }
+/* no #services section on this page */
 
 footer *, footer p, footer h1, footer h2, footer h3,
 footer a, footer span { color: #FFFFFF !important; }
 .footer-links a { color: rgba(255,255,255,0.5) !important; }
 .footer-copy { color: rgba(255,255,255,0.3) !important; }
 
-/* TDG cards (Travex Mall, Finance) → BLACK text */
-.tdg-card h4, .tdg-card p, .tdg-card-label,
-.tdg-card-link, .tdg-card span { color: #111111 !important; }
+/* TDG card colours handled in style.css */
 
 
 .modal-overlay { background: rgba(17,24,39,0.97) !important; }
@@ -138,7 +135,7 @@ footer a, footer span { color: #FFFFFF !important; }
 .modal-close:hover { background: #FBBF24 !important; color: #111827 !important; }
 .modal-gallery-label { color: rgba(255,255,255,0.5) !important; }
 .tag { color: #111827 !important; }
-.modal-link { color: #111827 !important; }
+.modal-link { color: var(--dark) !important; background: #FBBF24 !important; }
 </style>
 </head>
 <body>
@@ -245,7 +242,7 @@ footer a, footer span { color: #FFFFFF !important; }
       <div class="proj-card" onclick="openModal('efvs')">
         <div class="proj-img-wrap" style="background:var(--card2);display:flex;align-items:center;justify-content:center;aspect-ratio:16/10">
           <div style="text-align:center;padding:30px">
-            <div style="font-family:'Times New Roman', Times, serif,sans-serif;font-size:2.5rem;font-weight:800;color:var(--gold)">EFVS</div>
+            <div style="font-family:'Times New Roman', Times, serif,sans-serif;font-size:2.5rem;font-weight:800;color:var(--dark)">EFVS</div>
             <div style="font-size:0.8rem;color:var(--muted);margin-top:6px">Tax Intelligence System</div>
           </div>
         </div>
