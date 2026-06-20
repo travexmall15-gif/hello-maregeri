@@ -214,11 +214,11 @@ footer {
 .hero-skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
 .skill-pill {
   padding: 6px 14px;
-  background: #ECFDF5;
-  border: 1px solid #D1FAE5;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 20px;
   font-size: 0.78rem; font-weight: 500;
-  color: var(--green);
+  color: rgba(255,255,255,0.85);
   font-family: 'Inter', sans-serif;
 }
 
@@ -252,3 +252,78 @@ p, li, .hero-desc, .modal-desc,
   h2 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
   .photo-circle { width: 200px; height: 200px; }
 }
+
+/* ── DARK BG SECTION overrides ── */
+.dark-section, section.dark { background: var(--green) !important; }
+.dark-section h2, .dark-section h3, .dark-section p,
+.dark-section .label, .dark-section li { color: #FFFFFF !important; }
+.dark-section h2 span { color: #FBBF24 !important; }
+
+/* Services/About section on dark */
+#services { background: var(--green); }
+#services h2 { color: #FFFFFF; }
+#services h2 span { color: #FBBF24; }
+#services .label { color: rgba(255,255,255,0.6); }
+#services .svc h4 { color: #FFFFFF; }
+#services .svc p { color: rgba(255,255,255,0.75); }
+#services .svc-icon { color: #FBBF24; }
+
+/* Story hero on dark */
+#story-hero h1 { color: #FFFFFF; }
+#story-hero h1 span { color: #FBBF24; }
+#story-hero p, #story-hero .label { color: rgba(255,255,255,0.75); }
+
+/* Project hero on dark */
+#proj-hero h1 { color: #FFFFFF; }
+#proj-hero h1 span { color: #FBBF24; }
+#proj-hero p { color: rgba(255,255,255,0.75); }
+
+/* Contact hero on dark */
+#contact-hero h1 { color: #FFFFFF; }
+#contact-hero h1 span { color: #FBBF24; }
+#contact-hero p { color: rgba(255,255,255,0.75); }
+
+/* TDG cards on dark bg */
+.tdg-card { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); }
+.tdg-card h4 { color: #FFFFFF !important; }
+.tdg-card p { color: rgba(255,255,255,0.75) !important; }
+.tdg-card-label { color: #FBBF24 !important; }
+.tdg-card-link { color: #FBBF24 !important; }
+
+/* Timeline/Experience on light bg */
+.exp-title { color: var(--green) !important; }
+.exp-org { color: var(--green2) !important; }
+
+/* Modal on dark overlay */
+.modal-overlay { background: rgba(5,46,22,0.97); }
+.modal-title { color: #FFFFFF; }
+.modal-cat { color: #FBBF24; }
+.modal-desc { color: rgba(255,255,255,0.8); }
+.modal-gallery-label { color: rgba(255,255,255,0.5); }
+.modal-divider { background: rgba(255,255,255,0.1); }
+.modal-close { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); color: #FFFFFF; }
+.modal-close:hover { background: #FBBF24; color: var(--green); }
+.modal-link { background: #FBBF24; color: var(--green); font-weight: 700; }
+.modal-link:hover { background: #FDE68A; }
+
+/* Tab buttons */
+.tabs { background: rgba(5,46,22,0.05); }
+.tab-btn.active { background: var(--green); color: #FFFFFF; }
+.tab-btn:hover:not(.active) { color: var(--green); }
+
+/* Project cards on white */
+.proj-card { background: #FFFFFF; border-color: #D1FAE5; }
+.proj-card:hover { border-color: var(--green); }
+.proj-cat { color: var(--green2); }
+.proj-card-body h3 { color: var(--green); }
+.proj-card-body p { color: var(--muted); }
+.proj-open { color: var(--green2); }
+
+/* Mag cards */
+.mag-card { background: #FFFFFF; border-color: #D1FAE5; }
+.mag-body h3 { color: var(--green); }
+.mag-body p { color: var(--muted); }
+
+/* Story page */
+.timeline-marker { background: var(--green); }
+.timeline-line { background: #D1FAE5; }
