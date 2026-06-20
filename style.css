@@ -248,3 +248,67 @@ p, li, .hero-desc, .modal-desc, .story-content p,
   h2 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
   .photo-circle { width: 200px; height: 200px; }
 }
+
+
+/* ── FIX: Text on dark (charcoal #111827) backgrounds ── */
+[style*="background: var(--dark)"] *,
+[style*="background:var(--dark)"] *,
+.dark-bg *, .hdr-bar *,
+section[style*="background: var(--dark)"] * { color: #FFFFFF; }
+
+/* Sections that use var(--dark) as background */
+#hero, #hero * { color: #FFFFFF; }
+#hero h1, #hero h2, #hero h3 { color: #FFFFFF; }
+#hero h1 span { color: #FFFFFF; }
+
+/* Nav dark bar */
+.dark-bar, .dark-bar * { color: #FFFFFF; }
+
+/* Story hero */
+#story-hero, #story-hero * { color: #FFFFFF; }
+#story-hero h1 { color: #FFFFFF; }
+
+/* Project hero */
+#proj-hero, #proj-hero * { color: #FFFFFF; }
+#proj-hero h1, #proj-hero h1 span { color: #FFFFFF; }
+
+/* Contact hero */
+#contact-hero, #contact-hero * { color: #FFFFFF; }
+#contact-hero h1 { color: #FFFFFF; }
+
+/* Services section dark */
+#services, #services * { color: #FFFFFF; }
+#services h2, #services h3, #services h4 { color: #FFFFFF; }
+
+/* Footer dark */
+footer, footer * { color: #FFFFFF; }
+footer h1, footer h2, footer h3 { color: #FFFFFF; }
+.footer-links a { color: rgba(255,255,255,0.6); }
+.footer-copy { color: rgba(255,255,255,0.3); }
+
+/* TDG cards dark bg */
+.tdg-card, .tdg-card * { color: #FFFFFF; }
+.tdg-card { background: #1a1a2e; border-color: rgba(255,255,255,0.1); }
+.tdg-card h4 { color: #FFFFFF; }
+.tdg-card p { color: rgba(255,255,255,0.8); }
+.tdg-card-label, .tdg-card-link { color: #FBBF24; }
+
+/* Header bars in dark sections */
+.section-hdr, .hdr-dark, .hdr-dark * { color: #FFFFFF; }
+
+/* Buttons on dark bg */
+#hero .btn-gold { background: #FFFFFF; color: #111827; }
+#hero .btn-gold:hover { background: #F3F4F6; }
+#hero .btn-outline { border-color: rgba(255,255,255,0.4); color: #FFFFFF; }
+
+/* Skill pills on dark */
+#hero .skill-pill { color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); }
+
+/* Labels on dark bg */
+#hero .label, #story-hero .label, #proj-hero .label, #contact-hero .label,
+#services .label { color: rgba(255,255,255,0.6); }
+
+/* Stats on dark */
+#hero .stat-n { color: #FFFFFF; }
+#hero .stat-l { color: rgba(255,255,255,0.6); }
+#hero .hero-stats { border-color: rgba(255,255,255,0.15); }
