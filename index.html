@@ -51,150 +51,172 @@
   </script>
 <link rel="stylesheet" href="style.css"/>
 <style>
-/* ── HERO ── */
+/* ══════════════════════════════════════════
+   HERO — dark navy background "ya zamani"
+   All text WHITE on dark background
+══════════════════════════════════════════ */
 #hero {
   min-height: 100vh;
   display: flex; align-items: center;
   padding: 100px 5% 80px;
-  background: var(--dark);
+  background: linear-gradient(135deg, #080A0F 0%, #0d1117 60%, #0a0d14 100%);
   position: relative; overflow: hidden;
 }
 .hero-glow {
-  position: absolute;
-  top: -100px; right: 0;
+  position: absolute; top: -100px; right: 0;
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(139,37,0,0.08) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(139,37,0,0.12) 0%, transparent 65%);
   pointer-events: none;
 }
 .hero-inner {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: grid; grid-template-columns: 1fr auto;
   gap: 60px; align-items: center;
   width: 100%; max-width: 1100px;
   position: relative; z-index: 1;
 }
+
+/* hero badge */
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 5px 14px; border-radius: 20px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.15);
   font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; color: rgba(255,255,255,0.8);
-  background: rgba(255,255,255,0.08);
+  text-transform: uppercase; color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.06);
   margin-bottom: 20px;
 }
 .hero-badge::before {
   content: ''; width: 6px; height: 6px; border-radius: 50%;
-  background: rgba(255,255,255,0.7); animation: blink 2s infinite;
+  background: #8B2500; animation: blink 2s infinite;
 }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* hero headings — all white */
 .hero-left h1 {
   font-size: clamp(2.8rem, 5vw, 5rem);
   font-weight: 800; line-height: 1.0;
-  color: var(--white); margin-bottom: 6px;
+  color: #FFFFFF; margin-bottom: 6px;
   letter-spacing: -0.01em;
 }
-.hero-left h1 span { color: #FBBF24; }
+.hero-left h1 span { color: #8B2500; }
 .hero-subtitle {
   font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--muted);
+  text-transform: uppercase; color: rgba(255,255,255,0.55);
   margin-bottom: 20px;
 }
 .hero-desc {
-  font-size: 0.98rem; color: var(--muted);
+  font-size: 0.98rem; color: rgba(255,255,255,0.65);
   line-height: 1.8; max-width: 520px; margin-bottom: 32px;
 }
+
+/* hero buttons */
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+#hero .btn-gold  { background: #8B2500; color: #FFFFFF; border: none; }
+#hero .btn-gold:hover { background: #6b1c00; }
+#hero .btn-outline { border-color: rgba(255,255,255,0.3); color: #FFFFFF; background: transparent; }
+#hero .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
+
+/* hero stats */
 .hero-stats {
   display: flex; gap: 32px;
   padding-top: 28px;
-  border-top: 1px solid var(--border2);
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 .stat-n {
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.9rem; font-weight: 800;
-  color: #FBBF24; line-height: 1;
+  color: #8B2500; line-height: 1;
 }
 .stat-l {
   font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--muted); margin-top: 3px;
+  text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 3px;
 }
 
-/* PHOTO CIRCLE */
+/* skill pills on dark bg */
+.hero-skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.skill-pill {
+  padding: 5px 14px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 4px;
+  font-size: 0.72rem; font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  font-family: Georgia, serif;
+  letter-spacing: 0.02em;
+}
+
+/* photo circle */
 .hero-photo-side { display: flex; align-items: center; justify-content: center; }
 .photo-circle {
   width: 280px; height: 280px; border-radius: 50%;
   overflow: hidden;
-  border: 3px solid rgba(255,255,255,0.3);
-  box-shadow: 0 0 0 8px rgba(255,255,255,0.05), 0 20px 60px rgba(0,0,0,0.4);
+  border: 3px solid rgba(139,37,0,0.6);
+  box-shadow: 0 0 0 8px rgba(139,37,0,0.08), 0 20px 60px rgba(0,0,0,0.5);
   flex-shrink: 0;
 }
 .photo-circle img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
-/* ── TDG SECTION ── */
-#tdg { background: var(--dark); }
-.tdg-wrap {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 56px; align-items: center;
-}
+/* ══════════════════════════════════════════
+   TDG SECTION — dark bg, white text
+══════════════════════════════════════════ */
+#tdg { background: #111827; }
+.tdg-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .tdg-eyebrow {
   display: inline-block; padding: 4px 12px;
-  background: rgba(139,37,0,0.1); border: 1px solid var(--border);
+  background: rgba(139,37,0,0.12); border: 1px solid rgba(139,37,0,0.3);
   border-radius: 6px; font-size: 0.68rem; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: #FBBF24; margin-bottom: 14px;
+  color: #8B2500; margin-bottom: 14px;
 }
-.tdg-text h2 { margin-bottom: 16px; color: #FFFFFF !important; }
-.tdg-text p {
-  font-size: 0.94rem; color: rgba(255,255,255,0.75);
-  line-height: 1.8; margin-bottom: 14px;
-}
+#tdg h2 { color: #FFFFFF; margin-bottom: 16px; }
+#tdg h2 span { color: #8B2500; }
+.tdg-text p { font-size: 0.94rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 14px; }
+
+/* TDG cards — LIGHT background, BLACK text */
 .tdg-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 6px; }
 .tdg-card {
   display: block; padding: 18px;
-  background: var(--card2); border: 1px solid var(--border2);
+  background: #FFFFFF; border: 1px solid #E5E7EB;
   border-radius: 12px; text-decoration: none;
   transition: all 0.2s;
 }
-.tdg-card:hover { border-color: var(--gold); transform: translateY(-2px); }
-.tdg-card-label {
-  font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; color: #C2410C; margin-bottom: 4px;
-}
-.tdg-card h4 {
-  font-family: 'Times New Roman', Times, serif; font-size: 0.95rem; font-weight: 700;
-  color: var(--dark); margin-bottom: 5px;
-}
-.tdg-card p { font-size: 0.76rem; color: var(--text2); line-height: 1.5; margin-bottom: 10px; }
-.tdg-card-link { font-size: 0.7rem; font-weight: 700; color: var(--gold); letter-spacing: 0.04em; }
+.tdg-card:hover { border-color: #8B2500; transform: translateY(-2px); }
+.tdg-card-label { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8B2500; margin-bottom: 4px; }
+.tdg-card h4 { font-family: 'Times New Roman', Times, serif; font-size: 0.95rem; font-weight: 700; color: #111827; margin-bottom: 5px; }
+.tdg-card p  { font-size: 0.76rem; color: #374151; line-height: 1.5; margin-bottom: 10px; }
+.tdg-card-link { font-size: 0.7rem; font-weight: 700; color: #8B2500; letter-spacing: 0.04em; }
 
-/* screens */
+/* tdg screens */
 .tdg-screens { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.screen { border-radius: 12px; overflow: hidden; border: 1px solid var(--border2); transition: border-color 0.2s; }
-.screen:hover { border-color: var(--border); }
+.screen { border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: border-color 0.2s; }
+.screen:hover { border-color: rgba(255,255,255,0.25); }
 .screen img { width: 100%; display: block; object-fit: cover; }
 .screen.full { grid-column: 1 / -1; }
 
-/* ── SERVICES ── */
-#services { background: var(--bg); }
+/* ══════════════════════════════════════════
+   SERVICES — LIGHT bg, BLACK text
+══════════════════════════════════════════ */
+#services { background: #FFFFFF; }
+#services h2, #services .label { color: #111827; }
+#services h2 span { color: #8B2500; }
 .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
 .svc {
   padding: 26px 22px;
-  background: var(--card); border: 1px solid var(--border2);
+  background: #FFFFFF; border: 1px solid #E5E7EB;
   border-radius: 14px; transition: all 0.25s;
   border-bottom: 2px solid transparent;
 }
-.svc:hover { border-bottom-color: var(--gold); border-color: var(--border); }
+.svc:hover { border-bottom-color: #8B2500; border-color: #D1D5DB; }
 .svc-icon { font-size: 1.8rem; margin-bottom: 14px; }
-.svc h3 {
-  font-family: 'Times New Roman', Times, serif; font-size: 0.92rem; font-weight: 700;
-  color: var(--dark); margin-bottom: 8px; letter-spacing: 0.02em;
-}
-.svc p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+.svc h3 { font-family: 'Times New Roman', Times, serif; font-size: 0.92rem; font-weight: 700; color: #111827; margin-bottom: 8px; letter-spacing: 0.02em; }
+.svc p   { font-size: 0.82rem; color: #374151; line-height: 1.6; }
 
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: 36px; }
   .hero-photo-side { order: -1; }
-  .hero-photo-wrap { width: 280px; }
   .tdg-wrap { grid-template-columns: 1fr; gap: 36px; }
   .services-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -204,53 +226,37 @@
   .tdg-cards { grid-template-columns: 1fr; }
 }
 
-.hero-skills {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin-top: 24px;
-}
-.skill-pill {
-  padding: 5px 14px;
-  background: rgba(139,37,0,0.12);
-  border: 1px solid rgba(139,37,0,0.3);
-  border-radius: 4px;
-  font-size: 0.72rem; font-weight: 600;
-  color: rgba(255,255,255,0.7);
-  font-family: Georgia, serif;
-  letter-spacing: 0.02em;
-}
+/* ══════════════════════════════════════════
+   OVERRIDES — ensure no colour conflicts
+══════════════════════════════════════════ */
+/* hero: everything white */
+#hero, #hero h1, #hero h2, #hero h3, #hero p,
+#hero .hero-subtitle, #hero .hero-desc, #hero .label { color: #FFFFFF; }
+#hero h1 span { color: #8B2500 !important; }
+#hero .stat-n  { color: #8B2500 !important; }
+#hero .stat-l  { color: rgba(255,255,255,0.5) !important; }
+#hero .hero-badge, #hero .hero-desc, #hero .hero-subtitle { color: rgba(255,255,255,0.7) !important; }
+#hero .skill-pill { color: rgba(255,255,255,0.75) !important; }
+#hero .hero-stats { border-color: rgba(255,255,255,0.1) !important; }
 
-/* ── TEXT FIX: dark bg sections → white text ── */
-#hero, #hero p, #hero h1, #hero h2, #hero h3, #hero span,
-#hero .hero-subtitle, #hero .hero-desc, #hero .hero-badge,
-#hero .stat-l, #hero .label, #hero .skill-pill { color: #FFFFFF !important; }
-#hero h1 span, #hero .stat-n { color: #FFFFFF !important; }
-#hero .hero-stats { border-color: rgba(255,255,255,0.15) !important; }
+/* services: everything black */
+#services *, #services h2, #services h3, #services p, #services .label { color: #111827 !important; }
+.svc p { color: #374151 !important; }
 
-#story-hero *, #story-hero h1, #story-hero p { color: #FFFFFF !important; }
-#proj-hero *, #proj-hero h1, #proj-hero p { color: #FFFFFF !important; }
-#contact-hero *, #contact-hero h1, #contact-hero p { color: #FFFFFF !important; }
+/* tdg section heading */
+#tdg h2 { color: #FFFFFF !important; }
+#tdg h2 span { color: #8B2500 !important; }
+#tdg .label { color: rgba(255,255,255,0.5) !important; }
+.tdg-text p { color: rgba(255,255,255,0.7) !important; }
 
-/* #services has light background — dark text is correct */
-#services h2, #services h3 { color: var(--dark) !important; }
-#services p, #services .svc p, #services .label { color: var(--text2) !important; }
+/* tdg cards — black text on white */
+.tdg-card, .tdg-card * { color: #111827 !important; }
+.tdg-card-label, .tdg-card-link { color: #8B2500 !important; }
 
-footer *, footer p, footer h1, footer h2, footer h3,
-footer a, footer span { color: #FFFFFF !important; }
-.footer-links a { color: rgba(255,255,255,0.5) !important; }
-.footer-copy { color: rgba(255,255,255,0.3) !important; }
-
-/* TDG cards (Travex Mall, Finance) → dark text on light card */
-.tdg-card h4, .tdg-card p, .tdg-card-label,
-.tdg-card-link, .tdg-card span { color: var(--dark) !important; }
-
-
-/* Hero — white text on dark bg */
-.hero-badge, .hero-subtitle, .hero-desc, .stat-l { color: rgba(255,255,255,0.75) !important; }
-.hero-left h1, .hero-left h1 span, .stat-n { color: #FFFFFF !important; }
-.hero-stats { border-top-color: rgba(255,255,255,0.1) !important; }
-.skill-pill { color: rgba(255,255,255,0.8) !important; background: rgba(255,255,255,0.08) !important; border-color: rgba(255,255,255,0.15) !important; }
-/* TDG cards — dark text on light bg */
-.tdg-card h4, .tdg-card p, .tdg-card-label, .tdg-card-link { color: var(--dark) !important; }
+/* footer */
+footer, footer *, footer a { color: #FFFFFF !important; }
+.footer-links a { color: rgba(255,255,255,0.55) !important; }
+.footer-copy   { color: rgba(255,255,255,0.3) !important; }
 </style>
 </head>
 <body>
