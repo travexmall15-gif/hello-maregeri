@@ -327,3 +327,87 @@ p, li, .hero-desc, .modal-desc,
 /* Story page */
 .timeline-marker { background: var(--green); }
 .timeline-line { background: #D1FAE5; }
+
+/* ══ WHITE BACKGROUND SECTIONS ══ */
+/* Titles = darkest green, body text = black */
+body { color: #111111; }
+
+/* Global headings on white bg */
+h1, h2, h3, h4 { color: #052E16; }
+
+/* Global body text = near black */
+p { color: #111111 !important; }
+li { color: #111111; }
+
+/* Muted text (secondary) = dark gray, not light */
+.muted, .text-muted { color: #444444; }
+
+/* Labels = green */
+.label { color: #052E16; font-weight: 700; }
+
+/* Cards on white */
+.card-body p { color: #111111 !important; }
+.card-body h3 { color: #052E16 !important; }
+.card-cat { color: #064E3B !important; }
+.proj-card-body p { color: #111111 !important; }
+.proj-card-body h3 { color: #052E16 !important; }
+.proj-cat { color: #064E3B !important; }
+.mag-body h3 { color: #052E16 !important; }
+.mag-body p { color: #111111 !important; }
+
+/* Tag text */
+.tag { color: #052E16 !important; }
+
+/* Experience / Timeline text */
+.exp-title, .exp-org, .exp-date, .exp-body li { color: #111111 !important; }
+.timeline-body p { color: #111111 !important; }
+
+/* Story page content */
+.story-content p { color: #111111 !important; }
+.story-content h3 { color: #052E16 !important; }
+
+/* About section text */
+.about-text p { color: #111111 !important; }
+.svc p { color: #111111 !important; }
+
+/* TDG product section — has green bg → keep white */
+/* Services section — has green bg → keep white overrides from before */
+
+/* Contact page form text */
+input, textarea, label { color: #111111; }
+
+/* Modal on dark overlay — keep white */
+.modal-title { color: #FFFFFF !important; }
+.modal-desc { color: rgba(255,255,255,0.85) !important; }
+.modal-cat { color: #FBBF24 !important; }
+
+/* ══ DARK GREEN BG SECTIONS ══ */
+/* Hero — dark green bg */
+#hero h1, #hero h2, #hero h3 { color: #FFFFFF !important; }
+#hero .hero-subtitle { color: rgba(255,255,255,0.7) !important; }
+#hero .hero-desc { color: rgba(255,255,255,0.8) !important; }
+#hero .label { color: rgba(255,255,255,0.6) !important; }
+#hero .stat-n { color: #FBBF24 !important; }
+#hero .stat-l { color: rgba(255,255,255,0.55) !important; }
+
+/* Story hero, proj hero, contact hero */
+#story-hero h1, #story-hero p, #story-hero .label { color: #FFFFFF !important; }
+#proj-hero h1, #proj-hero p, #proj-hero .label { color: #FFFFFF !important; }
+#contact-hero h1, #contact-hero p, #contact-hero .label { color: #FFFFFF !important; }
+
+/* Services section (dark green bg) */
+#services h2, #services h3, #services p,
+#services .label, #services .svc-icon { color: #FFFFFF !important; }
+#services .svc p { color: rgba(255,255,255,0.8) !important; }
+
+/* TDG section */
+.tdg-section h2, .tdg-section p { color: #FFFFFF !important; }
+.tdg-card h4 { color: #FFFFFF !important; }
+.tdg-card p { color: rgba(255,255,255,0.8) !important; }
+.tdg-card-label { color: #FBBF24 !important; }
+.tdg-card-link { color: #FBBF24 !important; }
+
+/* Footer (dark green) */
+footer, footer p, footer a, footer .footer-copy { color: rgba(255,255,255,0.5) !important; }
+footer .footer-logo { color: #FFFFFF !important; }
+footer .footer-links a:hover { color: #FFFFFF !important; }
